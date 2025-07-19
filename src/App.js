@@ -1,0 +1,31 @@
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import './fonts.css';
+import LandingPage from './pages/LandingPage';
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
+import Industries from './pages/Industries';
+import Careers from './pages/Careers';
+import ContactUs from './pages/ContactUs';
+
+function App() {
+  useEffect(() => {
+    document.title = "Accountistry - Professional Accounting Services";
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<LandingPage/>} />
+        <Route path='/about-us' element={<AboutUs/>}/>
+        <Route path='/services' element={<Services/>}/>
+        <Route path='/industries' element={<Industries/>}/>
+        <Route path='/careers' element={<Careers/>}/>
+        <Route path='/contactus' element={<ContactUs/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
