@@ -20,19 +20,19 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
+        duration: 0.6,
+        staggerChildren: 0.15
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeOut"
       }
     }
@@ -40,9 +40,9 @@ const Hero = () => {
 
   const floatingVariants = {
     animate: {
-      y: [-10, 10, -10],
+      y: [-5, 5, -5],
       transition: {
-        duration: 6,
+        duration: 8,
         repeat: Infinity,
         ease: "easeInOut"
       }
@@ -50,72 +50,52 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen text-white overflow-hidden">
+    <section className="relative h-auto text-white overflow-hidden">
       {/* Animated background */}
       <AnimatedBackground />
       
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-6 z-10">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="min-h-screen flex flex-col justify-center"
+          className="flex flex-col justify-center py-2 lg:py-4"
         >
           {/* Main hero content */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8">
             {/* Left column - Text content */}
-            <motion.div variants={itemVariants} className="space-y-6 lg:space-y-8">
+            <motion.div variants={itemVariants} className="space-y-4 lg:space-y-6">
               {/* Badge */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
                 className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-primary-500/20 to-blue-500/20 text-primary-300 border border-primary-500/30 backdrop-blur-sm glass"
               >
-                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2 animate-pulse" />
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                 Financial Matchmakers for the Digital Age
               </motion.div>
               
               {/* Main headline with more reasonable sizing */}
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <motion.h1
                   variants={itemVariants}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight"
                 >
                   <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
                     Welcome to
                   </span>
-                  <motion.span
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.8, duration: 0.8 }}
-                    className="block bg-gradient-to-r from-primary-400 via-primary-300 to-blue-400 bg-clip-text text-transparent text-shimmer relative"
-                  >
+                  <span className="block bg-gradient-to-r from-primary-400 via-primary-300 to-blue-400 bg-clip-text text-transparent">
                     Accountistry!
-                    {/* Decorative elements */}
-                    <motion.div
-                      animate={{
-                        rotate: 360,
-                        scale: [1, 1.2, 1]
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                      className="absolute -top-2 -right-2 lg:-top-4 lg:-right-4 text-xl lg:text-3xl"
-                    >
-                      ✨
-                    </motion.div>
-                  </motion.span>
+                  </span>
                 </motion.h1>
               </div>
               
               {/* Enhanced subtitle with better mobile sizing */}
               <motion.p
                 variants={itemVariants}
-                className="text-base sm:text-lg lg:text-xl xl:text-2xl text-slate-300 leading-relaxed max-w-2xl"
+                className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl"
               >
                 Looking to cut costs without cutting corners? We connect you with 
                 <motion.span

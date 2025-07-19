@@ -7,11 +7,35 @@
   * {
     @apply border-border;
   }
+  
+  /* Performance optimizations */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Optimize rendering for animations */
+  .motion-element {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 
 body {
     @apply bg-background text-foreground font-primary;
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: hidden;
+    /* Performance optimizations for smooth scrolling */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -50,14 +74,28 @@ body {
     transform: scale(1.05) translateZ(0);
   }
 
-  /* Floating animation */
+  /* Optimized floating animation */
   .float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%, 100% { transform: translateY(0px) translateZ(0); }
+    50% { transform: translateY(-15px) translateZ(0); }
+  }
+  
+  /* Smooth scrolling optimization */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* GPU acceleration for better performance */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   /* Pulse glow effect */
