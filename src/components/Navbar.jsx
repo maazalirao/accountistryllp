@@ -30,29 +30,31 @@ const Navbar = () => {
 
     return (
     <>
-      {/* Top contact bar */}
+      {/* Top contact bar - Now visible on mobile */}
       <motion.div
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-3 px-4 hidden md:block border-b border-slate-700/50"
+        className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-2 sm:py-3 px-3 sm:px-4 border-b border-slate-700/50"
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-8">
-            <motion.div
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:justify-between items-center text-xs sm:text-sm">
+          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 lg:space-x-8 space-y-1 sm:space-y-0 mb-1 sm:mb-0">
+            <motion.a
+              href="tel:+19512231881"
               whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
+              className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
             >
-              <Phone className="h-4 w-4 text-primary-400" />
+              <Phone className="h-3 w-3 sm:h-4 sm:w-4 text-primary-400" />
               <span>+1 951 223-1881</span>
-            </motion.div>
-            <motion.div
+            </motion.a>
+            <motion.a
+              href="mailto:info@accountistryllp.com"
               whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
+              className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
             >
-              <Mail className="h-4 w-4 text-primary-400" />
+              <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-primary-400" />
               <span>info@accountistryllp.com</span>
-            </motion.div>
+            </motion.a>
           </div>
           <motion.div
             animate={{
@@ -63,9 +65,9 @@ const Navbar = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="text-primary-400 font-medium flex items-center space-x-2"
+            className="text-primary-400 font-medium flex items-center space-x-1 sm:space-x-2"
           >
-            <Sparkles className="h-4 w-4" />
+            <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
             <span>Professional Accounting Services</span>
           </motion.div>
         </div>

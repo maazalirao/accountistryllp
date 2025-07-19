@@ -55,12 +55,12 @@ const Hero = () => {
       <AnimatedBackground />
       
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-6 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 pb-6 z-10">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="flex flex-col justify-center py-2 lg:py-4"
+          className="flex flex-col justify-center py-3 sm:py-4 lg:py-6"
         >
           {/* Main hero content - Better mobile layout */}
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center mb-4 sm:mb-6 lg:mb-8">
@@ -114,15 +114,7 @@ const Hero = () => {
                 your books in check while you keep more cash in your pocket.
               </motion.p>
               
-              {/* Value proposition with better mobile sizing */}
-              <motion.p
-                variants={itemVariants}
-                className="text-sm sm:text-base lg:text-lg text-slate-400 leading-relaxed max-w-2xl mb-1 sm:mb-2 text-center lg:text-left"
-              >
-                Think of us as your financial matchmakers, connecting you with top-notch talent 
-                that meets budget-friendly pricing. Let us take the stress out of accounting so you
-                can focus on what you do best—<span className="text-primary-400 font-medium">growing your business!</span>
-              </motion.p>
+             
 
               {/* Enhanced features list with mobile responsiveness */}
               <motion.div
