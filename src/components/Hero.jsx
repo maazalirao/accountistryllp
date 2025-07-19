@@ -62,26 +62,28 @@ const Hero = () => {
           variants={containerVariants}
           className="flex flex-col justify-center py-2 lg:py-4"
         >
-          {/* Main hero content */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8">
+          {/* Main hero content - Better mobile layout */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center mb-4 sm:mb-6 lg:mb-8">
             {/* Left column - Text content */}
-            <motion.div variants={itemVariants} className="space-y-4 lg:space-y-6">
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-primary-500/20 to-blue-500/20 text-primary-300 border border-primary-500/30 backdrop-blur-sm glass"
-              >
-                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                Financial Matchmakers for the Digital Age
-              </motion.div>
+            <motion.div variants={itemVariants} className="space-y-4 lg:space-y-6 flex flex-col items-center lg:items-start">
+              {/* Badge - Centered on mobile */}
+              <div className="flex justify-center lg:justify-start">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.1, duration: 0.5 }}
+                  className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-primary-500/20 to-blue-500/20 text-primary-300 border border-primary-500/30 backdrop-blur-sm glass"
+                >
+                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                  Financial Matchmakers for the Digital Age
+                </motion.div>
+              </div>
               
-              {/* Main headline with more reasonable sizing */}
-              <div className="space-y-2">
+              {/* Centered main headline with adjusted sizing */}
+              <div className="space-y-2 text-center lg:text-left">
                 <motion.h1
                   variants={itemVariants}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+                  className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight"
                 >
                   <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
                     Welcome to
@@ -95,7 +97,7 @@ const Hero = () => {
               {/* Enhanced subtitle with better mobile sizing */}
               <motion.p
                 variants={itemVariants}
-                className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl"
+                className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl mb-1 sm:mb-2 text-center lg:text-left"
               >
                 Looking to cut costs without cutting corners? We connect you with 
                 <motion.span
@@ -115,7 +117,7 @@ const Hero = () => {
               {/* Value proposition with better mobile sizing */}
               <motion.p
                 variants={itemVariants}
-                className="text-sm sm:text-base lg:text-lg text-slate-400 leading-relaxed max-w-2xl"
+                className="text-sm sm:text-base lg:text-lg text-slate-400 leading-relaxed max-w-2xl mb-1 sm:mb-2 text-center lg:text-left"
               >
                 Think of us as your financial matchmakers, connecting you with top-notch talent 
                 that meets budget-friendly pricing. Let us take the stress out of accounting so you
@@ -125,7 +127,7 @@ const Hero = () => {
               {/* Enhanced features list with mobile responsiveness */}
               <motion.div
                 variants={itemVariants}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mx-auto lg:mx-0 max-w-xs sm:max-w-none"
               >
                 {features.map((feature, index) => (
                   <motion.div
@@ -158,7 +160,7 @@ const Hero = () => {
               {/* Enhanced CTA buttons with mobile responsiveness */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -197,7 +199,7 @@ const Hero = () => {
             <motion.div
               variants={floatingVariants}
               animate="animate"
-              className="relative order-first lg:order-last"
+              className="relative order-last lg:order-last mt-2 sm:mt-4 mb-4 sm:mb-6"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -205,54 +207,54 @@ const Hero = () => {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="relative"
               >
-                {/* Multi-layered glowing border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-500 via-blue-500 to-purple-500 rounded-3xl blur-3xl opacity-40 animate-pulse"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-blue-400 rounded-3xl blur-xl opacity-60"></div>
+                {/* Multi-layered glowing border - less intense on mobile */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-500 via-blue-500 to-purple-500 rounded-3xl blur-xl sm:blur-2xl opacity-30 sm:opacity-40 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-blue-400 rounded-3xl blur-md sm:blur-xl opacity-40 sm:opacity-60"></div>
                 
-                <Card className="relative overflow-hidden border-0 shadow-2xl rounded-3xl glass border border-slate-700/50 card-glow">
+                <Card className="relative overflow-hidden border-0 shadow-xl sm:shadow-2xl rounded-2xl sm:rounded-3xl glass border border-slate-700/50 card-glow">
                   <CardContent className="p-0">
                     <motion.img
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                       src="https://res.cloudinary.com/dm56xy1oj/image/upload/v1725990940/Home_krpcbs.svg"
                       alt="Professional accounting services"
-                      className="w-full h-full object-cover rounded-3xl filter brightness-110 contrast-110"
+                      className="w-full h-full object-cover rounded-2xl sm:rounded-3xl filter brightness-105 contrast-105"
                     />
                   </CardContent>
                 </Card>
                 
-                {/* Enhanced floating elements with mobile-friendly sizes */}
+                {/* Reduced floating elements with mobile-friendly sizes */}
                 <motion.div
                   animate={{
-                    y: [-8, 8, -8],
-                    rotate: [0, 10, 0],
-                    scale: [1, 1.1, 1]
+                    y: [-4, 4, -4],
+                    rotate: [0, 5, 0],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{
-                    duration: 4,
+                    duration: 6,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-primary-400 to-yellow-400 rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-2xl hover-glow"
+                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-primary-400 to-yellow-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl hover-glow"
                 >
-                  <DollarSign className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" />
+                  <DollarSign className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" />
                 </motion.div>
 
                 <motion.div
                   animate={{
-                    y: [8, -8, 8],
-                    rotate: [0, -10, 0],
-                    scale: [1, 1.1, 1]
+                    y: [4, -4, 4],
+                    rotate: [0, -5, 0],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{
-                    duration: 5,
+                    duration: 7,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: 1
                   }}
-                  className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl flex items-center justify-center shadow-2xl hover-glow"
+                  className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl hover-glow"
                 >
-                  <TrendingUp className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" />
+                  <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                 </motion.div>
               </motion.div>
             </motion.div>
