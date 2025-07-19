@@ -72,42 +72,48 @@ const Navbar = () => {
         transition={{ duration: 0.6 }}
         className={`bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white border-b border-slate-700/50 transition-all duration-300 
           ${showMobileTopBar 
-            ? 'py-2 sm:py-3 px-3 sm:px-4 max-h-24 sm:max-h-none opacity-100 translate-y-0' 
-            : 'py-0 px-3 sm:py-3 sm:px-4 max-h-0 sm:max-h-none opacity-0 sm:opacity-100 -translate-y-full sm:translate-y-0 overflow-hidden'}`}
+            ? 'py-1 sm:py-2 md:py-3 px-2 sm:px-3 md:px-4 max-h-12 sm:max-h-none opacity-100 translate-y-0' 
+            : 'py-0 px-2 sm:py-2 md:py-3 sm:px-3 md:px-4 max-h-0 sm:max-h-none opacity-0 sm:opacity-100 -translate-y-full sm:translate-y-0 overflow-hidden'}`}
       >
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:justify-between items-center text-xs sm:text-sm">
-          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 lg:space-x-8 space-y-1 sm:space-y-0 mb-1 sm:mb-0">
+                  {/* Top bar content - Mobile: single line with phone left, email right */}
+          <div className="max-w-7xl mx-auto w-full flex justify-between sm:justify-between items-center text-[10px] sm:text-xs md:text-sm">
+            {/* Left: Phone number */}
             <motion.a
               href="tel:+19512231881"
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
             >
-              <Phone className="h-3 w-3 sm:h-4 sm:w-4 text-primary-400" />
-              <span>+1 951 223-1881</span>
+              <Phone className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-primary-400" />
+              <span className="truncate">+1 951 223-1881</span>
             </motion.a>
-            <motion.a
-              href="mailto:info@accountistryllp.com"
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
+            
+            {/* Right: Email on mobile / Services text on desktop */}
+            <div className="flex items-center justify-end">
+              <motion.a
+                href="mailto:info@accountistryllp.com"
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
+              >
+                <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-primary-400" />
+                <span className="truncate">info@accountistryllp.com</span>
+              </motion.a>
+            </div>
+            
+            {/* Services text - Hidden on mobile */}
+            <motion.div
+              animate={{
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="text-primary-400 font-medium items-center space-x-1 sm:space-x-2 hidden sm:flex"
             >
-              <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-primary-400" />
-              <span>info@accountistryllp.com</span>
-            </motion.a>
-          </div>
-          <motion.div
-            animate={{
-              opacity: [0.7, 1, 0.7]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="text-primary-400 font-medium flex items-center space-x-1 sm:space-x-2"
-          >
-            <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
-            <span>Professional Accounting Services</span>
-          </motion.div>
+              <Sparkles className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4" />
+              <span>Professional Accounting Services</span>
+            </motion.div>
         </div>
       </motion.div>
 
@@ -125,7 +131,7 @@ const Navbar = () => {
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
             {/* Enhanced Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -138,9 +144,9 @@ const Navbar = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-blue-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                   
                   {/* Logo container */}
-                  <div className="relative w-14 h-14 bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl flex items-center justify-center shadow-xl border-2 border-slate-600 group-hover:border-primary-500 transition-all duration-300">
+                  <div className="relative w-12 h-12 sm:w-13 sm:h-13 md:w-14 md:h-14 bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl flex items-center justify-center shadow-xl border-2 border-slate-600 group-hover:border-primary-500 transition-all duration-300">
                     <img
-                      className="w-10 h-10 object-contain filter brightness-150 contrast-125 group-hover:scale-110 transition-transform duration-300"
+                      className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 object-contain filter brightness-150 contrast-125 group-hover:scale-110 transition-transform duration-300"
                                 src="https://res.cloudinary.com/dm56xy1oj/image/upload/v1725991678/Navbar_Hexa_Only_nvn1le.svg"
                                 loading="lazy"
                       alt="Accountistry Logo"
@@ -165,12 +171,12 @@ const Navbar = () => {
                 {/* Brand text */}
                 <div className="flex flex-col">
                   <motion.span
-                    className="text-slate-900 font-bold text-2xl leading-tight bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent group-hover:from-primary-600 group-hover:to-blue-600 transition-all duration-300"
+                    className="text-slate-900 font-bold text-xl sm:text-xl md:text-2xl leading-tight bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent group-hover:from-primary-600 group-hover:to-blue-600 transition-all duration-300"
                   >
                     Accountistry
                   </motion.span>
                   <motion.span
-                    className="text-primary-600 text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    className="text-primary-600 text-xs sm:text-xs md:text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   >
                     Financial Matchmakers
                   </motion.span>
@@ -247,7 +253,7 @@ const Navbar = () => {
                     animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    {isMobileMenuOpen ? <X className="h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6" />}
                   </motion.div>
                 </Button>
               </motion.div>
