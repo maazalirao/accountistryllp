@@ -8,15 +8,50 @@ import { cn } from "../lib/utils";
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showMobileTopBar, setShowMobileTopBar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      const isMobile = window.innerWidth < 640; // Matching sm: breakpoint in Tailwind
+      
+      // For main navbar background
+      setIsScrolled(currentScrollY > 50);
+      
+      // Only apply special scroll behavior on mobile
+      if (isMobile) {
+        // For mobile top bar visibility (show initially, hide on scroll down, show on scroll up)
+        if (currentScrollY < 10) {
+          // Always show at top of page
+          setShowMobileTopBar(true);
+        } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scrolling down and not near the top
+          setShowMobileTopBar(false);
+        } else if (currentScrollY < lastScrollY) {
+          // Scrolling up
+          setShowMobileTopBar(true);
+        }
+      } else {
+        // Always show on larger screens
+        setShowMobileTopBar(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
+    
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("resize", handleScroll);
+    
+    // Initial check
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -30,12 +65,15 @@ const Navbar = () => {
 
     return (
     <>
-      {/* Top contact bar - Now visible on mobile */}
+      {/* Top contact bar - Scroll behavior on mobile */}
       <motion.div
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-2 sm:py-3 px-3 sm:px-4 border-b border-slate-700/50"
+        className={`bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white border-b border-slate-700/50 transition-all duration-300 
+          ${showMobileTopBar 
+            ? 'py-2 sm:py-3 px-3 sm:px-4 max-h-24 sm:max-h-none opacity-100 translate-y-0' 
+            : 'py-0 px-3 sm:py-3 sm:px-4 max-h-0 sm:max-h-none opacity-0 sm:opacity-100 -translate-y-full sm:translate-y-0 overflow-hidden'}`}
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:justify-between items-center text-xs sm:text-sm">
           <div className="flex flex-col sm:flex-row items-center sm:space-x-4 lg:space-x-8 space-y-1 sm:space-y-0 mb-1 sm:mb-0">
@@ -79,10 +117,11 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className={cn(
-          "sticky top-0 z-50 transition-all duration-500",
+          "sticky z-50 transition-all duration-300",
           isScrolled 
             ? "bg-white/95 backdrop-blur-xl shadow-2xl border-b border-slate-200" 
-            : "bg-white/90 backdrop-blur-lg shadow-lg"
+            : "bg-white/90 backdrop-blur-lg shadow-lg",
+          showMobileTopBar ? "top-0" : "top-0"  // Always at top
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
