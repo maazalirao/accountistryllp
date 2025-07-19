@@ -76,27 +76,27 @@ const Navbar = () => {
             : 'py-0 px-2 sm:py-2 md:py-3 sm:px-3 md:px-4 max-h-0 sm:max-h-none opacity-0 sm:opacity-100 -translate-y-full sm:translate-y-0 overflow-hidden'}`}
       >
                   {/* Top bar content - Mobile: single line with phone left, email right */}
-          <div className="max-w-7xl mx-auto w-full flex justify-between sm:justify-between items-center text-[10px] sm:text-xs md:text-sm">
+          <div className="max-w-7xl mx-auto w-full flex justify-between sm:justify-between items-center text-[11px] sm:text-xs md:text-sm">
             {/* Left: Phone number */}
-            <motion.a
+                          <motion.a
               href="tel:+19512231881"
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
             >
               <Phone className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-primary-400" />
-              <span className="truncate">+1 951 223-1881</span>
+              <span className="truncate font-medium">+1 951 223-1881</span>
             </motion.a>
             
             {/* Right: Email on mobile / Services text on desktop */}
             <div className="flex items-center justify-end">
-              <motion.a
-                href="mailto:info@accountistryllp.com"
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
-              >
-                <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-primary-400" />
-                <span className="truncate">info@accountistryllp.com</span>
-              </motion.a>
+                              <motion.a
+                  href="mailto:info@accountistryllp.com"
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center space-x-1 sm:space-x-2 hover:text-primary-400 transition-colors cursor-pointer"
+                >
+                  <Mail className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-4 md:w-4 text-primary-400" />
+                  <span className="truncate font-medium">info@accountistryllp.com</span>
+                </motion.a>
             </div>
             
             {/* Services text - Hidden on mobile */}

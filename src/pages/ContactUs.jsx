@@ -10,10 +10,12 @@ const ContactUs = () => {
         phoneNumber: '',
         city: '',
         state: '',
-        inquiry: ''
+        inquiry: '',
+        to_email: 'info@accountistryllp.com' // Adding recipient email
     });
     
     const [messageSent, setMessageSent] = useState(false);
+    const [error, setError] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,11 +24,20 @@ const ContactUs = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError(false);
+        
+        // Create template parameters with the recipient email
+        const templateParams = {
+            ...formData,
+            to_email: 'info@accountistryllp.com', // Ensure emails go to this address
+            subject: `Contact Form Submission from ${formData.fullName}`,
+            reply_to: formData.email
+        };
 
         // Send email using EmailJS
-        emailjs.send('service_1wgwmzl', 'template_3jobarh', formData, 'DtyzG95w7OtDJdrGU')
+        emailjs.send('service_1wgwmzl', 'template_3jobarh', templateParams, 'DtyzG95w7OtDJdrGU')
             .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
+                console.log('Email sent successfully:', response.status, response.text);
                 setMessageSent(true);
                 setFormData({
                     fullName: '',
@@ -34,10 +45,18 @@ const ContactUs = () => {
                     phoneNumber: '',
                     city: '',
                     state: '',
-                    inquiry: ''
+                    inquiry: '',
+                    to_email: 'info@accountistryllp.com'
                 });
+                
+                // Auto-hide success message after 5 seconds
+                setTimeout(() => {
+                    setMessageSent(false);
+                }, 5000);
+                
             }, (error) => {
-                console.log('FAILED...', error);
+                console.error('Failed to send email:', error);
+                setError(true);
             });
     };
 
@@ -47,6 +66,20 @@ const ContactUs = () => {
 
             <div className="flex flex-col items-center justify-center py-16">
                 <h1 className="text-4xl font-bold text-secondary mb-8">Contact Us</h1>
+                
+                {/* Contact information display */}
+                <div className="mb-8 text-center">
+                    <p className="text-lg mb-2">
+                        <strong>Email:</strong> <a href="mailto:info@accountistryllp.com" className="text-primary hover:underline">info@accountistryllp.com</a>
+                    </p>
+                    <p className="text-lg mb-4">
+                        <strong>Phone:</strong> <a href="tel:+19512231881" className="text-primary hover:underline">+1 951 223-1881</a>
+                    </p>
+                    <p className="text-sm text-gray-600 italic">
+                        All form submissions will be sent to info@accountistryllp.com
+                    </p>
+                </div>
+                
                 <form 
                     className="bg-secondary p-8 rounded-xl shadow-lg w-full max-w-lg"
                     onSubmit={handleSubmit}
@@ -131,6 +164,7 @@ const ContactUs = () => {
                             value={formData.inquiry}
                             onChange={handleChange}
                             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                            rows="4"
                             required
                         />
                     </div>
@@ -144,7 +178,13 @@ const ContactUs = () => {
 
                 {messageSent && (
                     <div className="mt-4 p-4 bg-green-200 text-green-800 rounded-lg">
-                        Message has been sent successfully!
+                        Message has been sent successfully to info@accountistryllp.com!
+                    </div>
+                )}
+                
+                {error && (
+                    <div className="mt-4 p-4 bg-red-200 text-red-800 rounded-lg">
+                        Failed to send message. Please try again or contact directly at info@accountistryllp.com
                     </div>
                 )}
             </div>
