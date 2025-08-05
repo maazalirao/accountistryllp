@@ -34,11 +34,11 @@ const TestimonialSlider = () => {
           {testimonials.slice(currentIndex, currentIndex + 4).map((testimonial, index) => (
             <div
               key={index}
-              className={`group bg-secondary border-4 border-solid border-primary rounded-2xl p-6 transition-all duration-500 hover:border-secondary hover:bg-primary 
+              className={`group bg-grey-800 border border-grey-700 rounded-2xl p-6 transition-all duration-500 hover:border-primary-400 hover:bg-grey-700 
               ${index === 0 || index === 3 ? 'opacity-50 scale-90' : ''} // Half visibility for side items
               `}
             >
-              <div className="flex items-center mb-9 gap-2 text-amber-500 transition-all duration-500 group-hover:text-indigo-600">
+              <div className="flex items-center mb-9 gap-2 text-amber-500 transition-all duration-500 group-hover:text-primary-400">
                 {[...Array(1)].map((_, starIndex) => (
                   <svg key={starIndex} className="w-5 h-5" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -48,7 +48,7 @@ const TestimonialSlider = () => {
                   </svg>
                 ))}
               </div>
-              <p className="text-lg text-primary leading-8 h-24 transition-all duration-500 mb-9 group-hover:text-secondary">
+              <p className="text-lg text-white leading-8 h-24 transition-all duration-500 mb-9 group-hover:text-white">
                 {testimonial.text}
               </p>
             </div>
@@ -58,30 +58,30 @@ const TestimonialSlider = () => {
         {/* Arrow Buttons for Desktop */}
         <button
           onClick={prevSlide}
-          className="hidden lg:block absolute left-[-10px] top-1/2 transform -translate-y-1/2 group flex justify-center items-center border-4 border-solid border-secondary w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary"
+          className="hidden lg:block absolute left-[-10px] top-1/2 transform -translate-y-1/2 group flex justify-center items-center border-2 border-solid border-grey-700 bg-grey-800 w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary-500 hover:border-primary-500"
         >
-          <FaChevronLeft className="h-6 w-6 text-secondary" />
+          <FaChevronLeft className="h-6 w-6 text-white" />
         </button>
         <button
           onClick={nextSlide}
-          className="hidden lg:block absolute right-[-10px] top-1/2 transform -translate-y-1/2 group flex justify-center items-center border-4 border-solid border-secondary w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary"
+          className="hidden lg:block absolute right-[-10px] top-1/2 transform -translate-y-1/2 group flex justify-center items-center border-2 border-solid border-grey-700 bg-grey-800 w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary-500 hover:border-primary-500"
         >
-          <FaChevronRight className="h-6 w-6 text-secondary" />
+          <FaChevronRight className="h-6 w-6 text-white" />
         </button>
 
         {/* Arrow Buttons for Mobile */}
         <div className="flex justify-center mt-6 lg:hidden">
           <button
             onClick={prevSlide}
-            className="group flex justify-center items-center border-4 border-solid border-secondary w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary mx-2"
+            className="group flex justify-center items-center border-2 border-solid border-grey-700 bg-grey-800 w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary-500 hover:border-primary-500 mx-2"
           >
-            <FaChevronLeft className="h-6 w-6 text-secondary" />
+            <FaChevronLeft className="h-6 w-6 text-white" />
           </button>
           <button
             onClick={nextSlide}
-            className="group flex justify-center items-center border-4 border-solid border-secondary w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary mx-2"
+            className="group flex justify-center items-center border-2 border-solid border-grey-700 bg-grey-800 w-12 h-12 transition-all duration-500 rounded-full hover:bg-primary-500 hover:border-primary-500 mx-2"
           >
-            <FaChevronRight className="h-6 w-6 text-secondary" />
+            <FaChevronRight className="h-6 w-6 text-white" />
           </button>
         </div>
       </div>

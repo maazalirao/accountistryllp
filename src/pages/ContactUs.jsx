@@ -94,7 +94,7 @@ const ContactUs = () => {
                             name="fullName"
                             value={formData.fullName}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                             required
                         />
                     </div>
@@ -108,7 +108,7 @@ const ContactUs = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary"
+                            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400"
                             required
                         />
                     </div>
