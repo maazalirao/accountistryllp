@@ -25,7 +25,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-grey-900 text-white">
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-4 gap-12">
@@ -46,13 +46,8 @@ const Footer = () => {
               </div>
             </div>
             
-            <p className="text-slate-300 mb-6 leading-relaxed">
-              Your financial matchmakers, connecting you with expert accountants across the globe. 
-              We help you cut costs without cutting corners, so you can focus on growing your business.
-            </p>
-            
-            <p className="text-primary-400 font-medium mb-4">
-              Professional Accounting Services Worldwide
+            <p className="text-grey-300 mb-6 leading-relaxed">
+              We are a full-service CPA firm based in Southern California, offering a comprehensive suite of accounting services tailored to meet the diverse needs of our clients. Our team is composed of experienced CPAs and seasoned accounting professionals who bring deep industry knowledge and a commitment to delivering high-quality, personalized service.
             </p>
           </div>
 
@@ -67,7 +62,7 @@ const Footer = () => {
                 <div key={index}>
                   <Link 
                     to={link.href}
-                    className="text-slate-300 hover:text-primary-400 transition-colors block"
+                    className="text-grey-300 hover:text-primary-400 transition-colors block"
                   >
                     {link.name}
                   </Link>
@@ -87,7 +82,7 @@ const Footer = () => {
                 <div key={index}>
                   <Link 
                     to={resource.href}
-                    className="text-slate-300 hover:text-primary-400 transition-colors block"
+                    className="text-grey-300 hover:text-primary-400 transition-colors block"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -105,7 +100,7 @@ const Footer = () => {
                 <div key={index}>
                   <Link 
                     to={social.href}
-                    className="text-slate-300 hover:text-primary-400 transition-colors block"
+                    className="text-grey-300 hover:text-primary-400 transition-colors block"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -125,20 +120,20 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <a href="tel:+19512231881" className="text-slate-300 hover:text-primary-400 transition-colors">
-                  +1 951 223-1881
+                <a href="tel:+19512231881" className="text-grey-300 hover:text-primary-400 transition-colors">
+                  (951) 223-1881
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <a href="mailto:info@accountistryllp.com" className="text-slate-300 hover:text-primary-400 transition-colors">
+                <a href="mailto:info@accountistryllp.com" className="text-grey-300 hover:text-primary-400 transition-colors">
                   info@accountistryllp.com
                 </a>
               </div>
               
               <div className="pt-4">
-                <p className="text-slate-300 leading-relaxed">
+                <p className="text-grey-300 leading-relaxed">
                   Ready to learn more? Send us a note about your accounting needs or 
                   call us for a quick conversation about how we can help your business grow.
                 </p>
@@ -149,18 +144,18 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-slate-800">
+      <div className="border-t border-grey-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center">
-            <div className="text-slate-400 text-sm mb-4 sm:mb-0">
+            <div className="text-grey-400 text-sm mb-4 sm:mb-0">
               © 2024 Accountistry™ All Rights Reserved.
             </div>
             
             <div className="flex space-x-6">
-              <Link to="#" className="text-slate-400 hover:text-primary-400 transition-colors text-sm">
+              <Link to="#" className="text-grey-400 hover:text-primary-400 transition-colors text-sm">
                 Privacy Policy
               </Link>
-              <Link to="#" className="text-slate-400 hover:text-primary-400 transition-colors text-sm">
+              <Link to="#" className="text-grey-400 hover:text-primary-400 transition-colors text-sm">
                 Terms of Service
               </Link>
             </div>

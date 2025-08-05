@@ -61,31 +61,31 @@ const ContactUs = () => {
     };
 
     return (
-        <div className="min-h-screen bg-bgnew">
+        <div className="min-h-screen bg-grey-900">
             <Navbar />
 
             <div className="flex flex-col items-center justify-center py-16">
-                <h1 className="text-4xl font-bold text-secondary mb-8">Contact Us</h1>
+                <h1 className="text-4xl font-bold text-white mb-8">Contact Us</h1>
                 
                 {/* Contact information display */}
                 <div className="mb-8 text-center">
-                    <p className="text-lg mb-2">
-                        <strong>Email:</strong> <a href="mailto:info@accountistryllp.com" className="text-primary hover:underline">info@accountistryllp.com</a>
+                    <p className="text-lg mb-2 text-white">
+                        <strong>Email:</strong> <a href="mailto:info@accountistryllp.com" className="text-primary-400 hover:underline">info@accountistryllp.com</a>
                     </p>
-                    <p className="text-lg mb-4">
-                        <strong>Phone:</strong> <a href="tel:+19512231881" className="text-primary hover:underline">+1 951 223-1881</a>
+                    <p className="text-lg mb-4 text-white">
+                        <strong>Phone:</strong> <a href="tel:+19512231881" className="text-primary-400 hover:underline">(951) 223-1881</a>
                     </p>
-                    <p className="text-sm text-gray-600 italic">
+                    <p className="text-sm text-grey-400 italic">
                         All form submissions will be sent to info@accountistryllp.com
                     </p>
                 </div>
                 
                 <form 
-                    className="bg-secondary p-8 rounded-xl shadow-lg w-full max-w-lg"
+                    className="bg-grey-800 p-8 rounded-xl shadow-lg w-full max-w-lg border border-grey-700"
                     onSubmit={handleSubmit}
                 >
                     <div className="mb-4">
-                        <label className="block text-primary text-sm font-bold mb-2" htmlFor="fullName">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="fullName">
                             Full Name
                         </label>
                         <input
@@ -99,7 +99,7 @@ const ContactUs = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-primary text-sm font-bold mb-2" htmlFor="email">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
                             Email
                         </label>
                         <input
@@ -113,7 +113,7 @@ const ContactUs = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-primary text-sm font-bold mb-2" htmlFor="phoneNumber">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="phoneNumber">
                             Phone Number
                         </label>
                         <input
@@ -127,7 +127,7 @@ const ContactUs = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-primary text-sm font-bold mb-2" htmlFor="city">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="city">
                             City
                         </label>
                         <input
@@ -141,7 +141,7 @@ const ContactUs = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-primary text-sm font-bold mb-2" htmlFor="state">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="state">
                             State
                         </label>
                         <input
@@ -155,7 +155,7 @@ const ContactUs = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label className="block text-primary text-sm font-bold mb-2" htmlFor="inquiry">
+                        <label className="block text-white text-sm font-bold mb-2" htmlFor="inquiry">
                             Your Inquiry
                         </label>
                         <textarea
@@ -170,7 +170,7 @@ const ContactUs = () => {
                     </div>
                     <button
                         type="submit"
-                        className="bg-primary text-secondary font-bold py-2 px-4 rounded-lg hover:scale-110 transition-all duration-300"
+                        className="bg-primary-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-600 transition-all duration-300"
                     >
                         Submit
                     </button>

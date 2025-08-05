@@ -60,8 +60,8 @@ import ServicesCard from "../components/ServicesCard";
 
 const Services = () => {
     return (
-        <div className="relative min-h-screen w-screen bg-bgnew bg-cover bg-center bg-repeat">
-            <div className="absolute z-[-1] inset-0 animate-pulse bg-gradient-to-r from-transparent to-primary opacity-30"></div>
+        <div className="relative min-h-screen w-screen bg-grey-900">
+            <div className="absolute z-[-1] inset-0 bg-gradient-to-br from-grey-900 via-grey-800 to-grey-900"></div>
 
             <Navbar />
 
@@ -73,7 +73,7 @@ const Services = () => {
                         alt="Background"
                     />
                     <div className="w-[100%] md:w-[60%]">
-                        <p className="text-secondary font-primary md:text-justify text-center rounded-xl py-2 px-5 text-lg  md:text-2xl mt-5 animate-slideInFromLeft">
+                        <p className="text-white font-primary md:text-justify text-center rounded-xl py-2 px-5 text-lg  md:text-2xl mt-5 animate-slideInFromLeft">
                             <span>
                                 Accountistry offers a comprehensive suite of accounting services tailored to meet the diverse needs of our clients.<br /><br />
                             </span>

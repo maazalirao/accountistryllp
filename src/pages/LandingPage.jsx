@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ServicesSection from "../components/ServicesSection";
+import ClientsSection from "../components/ClientsSection";
 import Footer from "../components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Button } from "../components/ui/button";
@@ -11,22 +12,22 @@ import { Quote, Star, ArrowRight, Building, Users, TrendingUp, Globe, DollarSign
 const LandingPage = () => {
   const testimonials = [
     {
-      name: "Jennifer Martinez",
-      company: "Tech Startup Inc.",
+      name: "Katerina J.",
+      company: "",
       rating: 5,
-      text: "Accountistry helped us reduce our accounting costs by 50% while maintaining excellent quality. Their global talent network is impressive!"
+      text: "I was looking for some help with tax questions and found Accountistry online. They messaged me right away and were super helpful. They offered great advice and guided me through my questions. I highly recommend them for any tax questions or tax services. Very responsive!"
     },
     {
-      name: "David Chen",
-      company: "Growth Manufacturing",
+      name: "Rahul T.",
+      company: "",
       rating: 5,
-      text: "The professional accountants they connected us with understand our business better than our previous local firm. Highly recommended!"
+      text: "Accountistry is a great and talented accounting firm. I'm not exaggerating when I say they may be one of the most punctual and efficient teams I've worked with! The whole time, they maintained open and transparent communication, addressed any issues quickly, and even went out of their way to help with an additional task that came up."
     },
     {
-      name: "Sarah Williams",
-      company: "Digital Marketing Agency",
+      name: "Craig R.",
+      company: "",
       rating: 5,
-      text: "Outstanding service and significant cost savings. They truly are financial matchmakers - found us the perfect accounting partner."
+      text: "Accountistry is one of the most professional accounting firms I've worked with to date. After several unsatisfactory experiences with other accountants, they were a breath of fresh air. They delivered on everything promised without any drama. I truly appreciate their service and will definitely be using them again."
     }
   ];
 
@@ -61,78 +62,105 @@ const LandingPage = () => {
       {/* Services Section */}
       <ServicesSection />
       
-      {/* Statistics & Success Metrics Section */}
-      <section className="py-16 sm:py-20 bg-white">
+      {/* Clients Section */}
+      <ClientsSection />
+      
+      {/* Client Logos Section */}
+      <section className="py-16 sm:py-20 bg-grey-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
-              Trusted by Businesses Worldwide
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+              Join other businesses that have used Accountistry to transform their accounting operations
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto">
-              Join hundreds of successful businesses that have transformed their accounting 
-              operations with our global talent network.
-            </p>
           </div>
           
-          {/* Stats section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {stats.map((stat, index) => (
-              <Card key={index} className="text-center border-0 shadow-medium hover:shadow-large transition-shadow duration-300">
-                <CardHeader className="pb-4">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
-                    {stat.value}
-                  </CardTitle>
-                  <p className="text-base sm:text-lg font-semibold text-primary-600">
-                    {stat.label}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm sm:text-base text-slate-600">
-                    {stat.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Moving Banner */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll space-x-12 sm:space-x-16">
+              {/* First set of logos */}
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">One Ocean County</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Mr. Roccos 909</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Nikisha Halal Grill</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Balance Health</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Healthy FLA</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">ICLR</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Silicon.net.pk</span>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">One Ocean County</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Mr. Roccos 909</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Nikisha Halal Grill</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Balance Health</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Healthy FLA</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">ICLR</span>
+              </div>
+              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                <span className="text-white font-bold text-lg">Silicon.net.pk</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-20 bg-slate-50">
+      <section className="py-16 sm:py-20 bg-grey-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               What Our Clients Say
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied clients have to say 
-              about our professional services and cost savings.
+            <p className="text-base sm:text-lg lg:text-xl text-grey-300 max-w-3xl mx-auto">
+              Don't just take our word for it; see what our satisfied clients have to say about us.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white border-0 shadow-medium hover:shadow-large transition-all duration-300 transform hover:-translate-y-1">
+              <Card key={index} className="bg-grey-800 border border-grey-700 hover:border-primary-400 shadow-medium hover:shadow-large transition-all duration-300 transform hover:-translate-y-1">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
-                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-primary-500" />
+                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-primary-400" />
                     <div className="flex space-x-1">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current text-primary-500" />
+                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-current text-primary-400" />
                       ))}
                     </div>
                   </div>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-grey-300 leading-relaxed">
                     "{testimonial.text}"
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-slate-900 text-sm sm:text-base">{testimonial.name}</p>
-                    <p className="text-xs sm:text-sm text-slate-500">{testimonial.company}</p>
+                  <div className="border-t border-grey-700 pt-4">
+                    <p className="font-semibold text-white text-sm sm:text-base">{testimonial.name}</p>
+                    {testimonial.company && (
+                      <p className="text-xs sm:text-sm text-grey-400">{testimonial.company}</p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -142,14 +170,13 @@ const LandingPage = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-slate-900 text-white">
+      <section className="py-16 sm:py-20 bg-grey-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            Ready to Cut Costs Without Cutting Corners?
+            Interested in Learning More?
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 mb-8 sm:mb-12 max-w-3xl mx-auto">
-            Let us be your financial matchmakers. We'll connect you with expert accountants 
-            who will keep your books in check while you keep more cash in your pocket.
+          <p className="text-base sm:text-lg lg:text-xl text-grey-300 mb-8 sm:mb-12 max-w-3xl mx-auto">
+            Let us connect you with our team of expert accountants who will help get your accounting back on track. Contact us now!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12">
@@ -167,16 +194,11 @@ const LandingPage = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="w-full sm:w-auto bg-primary-500 hover:bg-primary-600 px-8 sm:px-10">
+          <div className="flex justify-center">
+            <Button size="lg" className="w-full sm:w-auto bg-primary-500 hover:bg-primary-600 text-white shadow-lg border-0 px-8 sm:px-10">
               <Link to="/contactus" className="flex items-center justify-center">
                 Get Started Today
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-slate-900 px-8 sm:px-10">
-              <Link to="/services">
-                Learn More About Our Services
               </Link>
             </Button>
           </div>

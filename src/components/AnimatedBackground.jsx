@@ -25,7 +25,7 @@ const AnimatedBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Simple gradient background - performance optimized */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-grey-900 via-grey-800 to-grey-900" />
       
       {/* Reduced and optimized gradient orbs */}
       {floatingElements.map((element) => (
@@ -59,7 +59,7 @@ const AnimatedBackground = () => {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-gradient-to-r from-primary-400/40 to-blue-400/40 opacity-40" // Reduced opacity
+          className="absolute rounded-full bg-gradient-to-r from-primary-400/30 to-primary-300/30 opacity-30" // Reduced opacity
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -103,9 +103,9 @@ const AnimatedBackground = () => {
       </div>
 
       {/* Subtle radial gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-slate-900/20" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-grey-900/20" />
     </div>
   );
 };
 
-export default AnimatedBackground; 
+export default AnimatedBackground;

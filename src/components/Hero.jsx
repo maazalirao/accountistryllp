@@ -9,10 +9,10 @@ import AnimatedBackground from "./AnimatedBackground";
 
 const Hero = () => {
   const features = [
-    { icon: Globe2, text: "Global Talent Network", color: "text-blue-400" },
-    { icon: Zap, text: "Lightning Fast Setup", color: "text-yellow-400" },
-    { icon: TrendingUp, text: "Cost-Effective Solutions", color: "text-green-400" },
-    { icon: Award, text: "Quality Guaranteed", color: "text-purple-400" }
+    { icon: Globe2, text: "Bookkeeping", color: "text-primary-400" },
+    { icon: Zap, text: "Personal & Business Taxes", color: "text-primary-300" },
+    { icon: TrendingUp, text: "Audits & Reviews", color: "text-primary-500" },
+    { icon: Award, text: "Financial Statement Compilations", color: "text-primary-600" }
   ];
 
   const containerVariants = {
@@ -50,45 +50,32 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-auto text-white overflow-hidden">
+    <section className="relative h-auto text-white overflow-hidden bg-gradient-to-br from-grey-900 via-grey-800 to-primary-900">
       {/* Animated background */}
       <AnimatedBackground />
       
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 pb-6 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-6 z-10">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
-          className="flex flex-col justify-center py-3 sm:py-4 lg:py-6"
+          className="flex flex-col justify-center py-2"
         >
           {/* Main hero content - Better mobile layout */}
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-12 items-center mb-4 sm:mb-6 lg:mb-8">
             {/* Left column - Text content */}
             <motion.div variants={itemVariants} className="space-y-4 lg:space-y-6 flex flex-col items-center lg:items-start">
-              {/* Badge - Centered on mobile */}
-              <div className="flex justify-center lg:justify-start">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.1, duration: 0.5 }}
-                  className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-primary-500/20 to-blue-500/20 text-primary-300 border border-primary-500/30 backdrop-blur-sm glass"
-                >
-                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                  Financial Matchmakers for the Digital Age
-                </motion.div>
-              </div>
-              
-              {/* Centered main headline with adjusted sizing */}
-              <div className="space-y-2 text-center lg:text-left">
+              {/* Centered main headline with adjusted sizing and fixed positioning */}
+              <div className="space-y-3 text-center lg:text-left pt-1">
                 <motion.h1
                   variants={itemVariants}
-                  className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+                  className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-relaxed pb-2"
                 >
-                  <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-white via-grey-100 to-primary-200 bg-clip-text text-transparent">
                     Welcome to
                   </span>
-                  <span className="block bg-gradient-to-r from-primary-400 via-primary-300 to-blue-400 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500 bg-clip-text text-transparent">
                     Accountistry!
                   </span>
                 </motion.h1>
@@ -97,21 +84,20 @@ const Hero = () => {
               {/* Enhanced subtitle with better mobile sizing */}
               <motion.p
                 variants={itemVariants}
-                className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl mb-1 sm:mb-2 text-center lg:text-left"
+                className="text-base sm:text-lg lg:text-xl text-primary-100 font-medium leading-relaxed max-w-2xl mb-1 sm:mb-2 text-center lg:text-left"
               >
-                Looking to cut costs without cutting corners? We connect you with 
+                We are a full-service CPA firm based in Southern California, offering a comprehensive suite of accounting services tailored to meet the diverse needs of our clients. Our team is composed of 
                 <motion.span
                   animate={{
-                    color: ["#fbbf24", "#3b82f6", "#8b5cf6", "#fbbf24"]
+                    color: ["#8bc094", "#dbede1", "#6ea878", "#8bc094"]
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="font-semibold"
-                > expert accountants worldwide</motion.span> who keep
-                your books in check while you keep more cash in your pocket.
+                  className="font-bold"
+                > experienced CPAs and seasoned accounting professionals</motion.span> who bring deep industry knowledge and a commitment to delivering high-quality, personalized service. Our services
               </motion.p>
               
              
@@ -128,7 +114,7 @@ const Hero = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="flex items-center space-x-3 p-3 sm:p-4 rounded-xl glass border border-slate-700/50 hover:border-primary-500/50 transition-all duration-300 group magnetic"
+                    className="flex items-center space-x-3 p-3 sm:p-4 rounded-xl glass border border-primary-600/30 hover:border-primary-400/80 transition-all duration-300 group magnetic bg-primary-900/20 hover:bg-primary-800/30"
                   >
                     <motion.div
                       animate={{
@@ -144,22 +130,40 @@ const Hero = () => {
                     >
                       <feature.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.color} flex-shrink-0 group-hover:scale-110 transition-transform`} />
                     </motion.div>
-                    <span className="text-slate-300 font-medium group-hover:text-white transition-colors text-sm sm:text-base">{feature.text}</span>
+                    <span className="text-primary-200 font-medium group-hover:text-primary-100 transition-colors text-sm sm:text-base">{feature.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
 
-              {/* Enhanced CTA buttons with mobile responsiveness */}
+              {/* Explore Services button - positioned after feature boxes */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start"
+                className="flex justify-center lg:justify-start pt-4"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-grey-400 text-black hover:bg-grey-700 hover:text-white hover:border-primary-400 transition-all duration-300 rounded-2xl px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm">
+                    <Link to="/services" className="flex items-center justify-center">
+                      <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                      Explore Complete List of Services
+                    </Link>
+                  </Button>
+                </motion.div>
+              </motion.div>
+
+              {/* Get Started Today button - positioned below Explore Services */}
+              <motion.div
+                variants={itemVariants}
+                className="flex justify-center lg:justify-start pt-3"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="group"
                 >
-                  <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white shadow-2xl border-0 pulse-glow rounded-2xl px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-semibold">
+                  <Button size="lg" className="w-full sm:w-auto bg-primary-500 hover:bg-primary-600 text-white shadow-lg border-0 rounded-2xl px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all duration-300">
                     <Link to="/contactus" className="flex items-center justify-center">
                       <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-pulse" />
                       Get Started Today
@@ -169,18 +173,6 @@ const Hero = () => {
                       >
                         <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                       </motion.div>
-                    </Link>
-                  </Button>
-                </motion.div>
-                
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white hover:border-primary-500 transition-all duration-300 rounded-2xl px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm glass">
-                    <Link to="/services" className="flex items-center justify-center">
-                      <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Explore Services
                     </Link>
                   </Button>
                 </motion.div>
@@ -208,8 +200,8 @@ const Hero = () => {
                     <motion.img
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
-                      src="https://res.cloudinary.com/dm56xy1oj/image/upload/v1725990940/Home_krpcbs.svg"
-                      alt="Professional accounting services"
+                      src="https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Financial analytics and accounting dashboard with charts and graphs"
                       className="w-full h-full object-cover rounded-2xl sm:rounded-3xl filter brightness-105 contrast-105"
                     />
                   </CardContent>
@@ -252,11 +244,20 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Enhanced Statistics Section with mobile responsiveness */}
+          {/* Why Choose Accountistry Section */}
           <motion.div
             variants={itemVariants}
-            className="relative z-10 mt-8 lg:mt-12"
+            className="relative z-10 mt-8 lg:mt-12 text-center"
           >
+            <motion.h2
+              variants={itemVariants}
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8"
+            >
+              Why Choose{" "}
+              <span className="bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500 bg-clip-text text-transparent">
+                Accountistry?
+              </span>
+            </motion.h2>
             <StatisticsSection />
           </motion.div>
         </motion.div>
@@ -296,7 +297,7 @@ const Hero = () => {
                 href="tel:+19512231881"
                 className="text-primary-400 hover:text-primary-300 underline font-medium transition-colors hover-glow"
               >
-                +1 951 223-1881
+                (951) 223-1881
               </motion.a>{" "}
               for a quick conversation.
             </motion.p>
@@ -307,4 +308,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

@@ -64,8 +64,8 @@ import ServicesCard from "../components/ServicesCard";
 
 const Industries = () => {
     return (
-        <div className="relative min-h-screen w-screen bg-bgnew bg-cover bg-center bg-repeat">
-            <div className="absolute z-[-1] inset-0 animate-pulse bg-gradient-to-r from-transparent to-primary opacity-30"></div>
+        <div className="relative min-h-screen w-screen bg-grey-900">
+            <div className="absolute z-[-1] inset-0 bg-gradient-to-br from-grey-900 via-grey-800 to-grey-900"></div>
 
             <Navbar />
 
@@ -77,7 +77,7 @@ const Industries = () => {
                         alt="Background"
                     />
                     <div className="w-[100%] md:w-[60%]">
-                        <p className="text-secondary font-primary md:text-justify text-center text-lg md:text-2xl mt-8 md:mt-12 animate-slideInFromLeft">
+                        <p className="text-white font-primary md:text-justify text-center text-lg md:text-2xl mt-8 md:mt-12 animate-slideInFromLeft">
                             <span>
                                 Accountistry supports a wide array of companies across different industries, offering tailored solutions that address the unique financial needs of each sector.<br /> <br />
                             </span>
