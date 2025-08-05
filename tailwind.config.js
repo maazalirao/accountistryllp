@@ -102,7 +102,7 @@ export default {
         'scale-in': 'scale-in 0.6s ease-out',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'scroll': 'scroll 30s linear infinite',
+        'scroll': 'scroll 10s linear infinite',
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
