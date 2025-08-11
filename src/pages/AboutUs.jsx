@@ -142,21 +142,28 @@ const AboutUs = () => {
                                 variants={itemVariants}
                                 className="text-lg text-slate-300 leading-relaxed"
                             >
-                                At Accountistry, the story began with two friends—seasoned CPAs who spent years refining their expertise at Big 4 audit firms and within the world of multinational and publicly traded corporations. Along the way, they noticed something intriguing: these large entities, with their vast resources, were adeptly managing rising domestic labor costs by offshoring their accounting functions to highly skilled professionals overseas. This sparked a lightbulb moment—why should this powerful strategy be reserved for the corporate giants?
+                                At Accountistry, our story began with two friends—seasoned CPAs who honed their skills at Big 4 audit firms and within multinational and publicly traded corporations. They had seen it all: the intensity of year-end audits, the precision required for financial reporting, and the strategic thinking needed to guide businesses through complex financial landscapes. Along the way, they discovered a shared passion—not just for numbers, but for helping people and businesses make sense of them.
                             </motion.p>
                             
                             <motion.p 
                                 variants={itemVariants}
                                 className="text-lg text-slate-300 leading-relaxed"
                             >
-                                Driven by a desire to shake up the financial services industry, they launched Accountistry—a firm dedicated to leveling the playing field for smaller businesses. Whether the need is for project-based assistance or full accounting department support, Accountistry connects businesses with their top-tier team of accountants abroad, including certified and chartered professionals, to deliver exceptional service at a fraction of the cost.
+                                They wanted to take the expertise and discipline they'd developed at the highest levels and bring it to clients who deserved the same caliber of service, no matter their size. With that mission in mind, they launched Accountistry—a firm designed to provide the kind of accounting support that empowers clients to take charge of their finances.
                             </motion.p>
 
                             <motion.p 
                                 variants={itemVariants}
                                 className="text-lg text-slate-300 leading-relaxed"
                             >
-                                The firm's name, a unique blend of "accounting" and "dentistry," pays homage to the founders' wives, both dentists, and symbolizes their commitment to precision, care, and holistic service. Accountistry's mission is clear: to ensure businesses achieve cost savings without sacrificing quality, thereby empowering them to thrive in a competitive landscape.
+                                Whether it's keeping your books clean and organized, preparing personal or business tax returns, conducting audits and reviews, or delivering clear financial reports you can actually use, our goal is to provide thoughtful guidance and support that makes sense for where you are and where you're headed. No jargon. No cookie-cutter solutions. Just smart, reliable accounting that works for you.
+                            </motion.p>
+
+                            <motion.p 
+                                variants={itemVariants}
+                                className="text-lg text-slate-300 leading-relaxed"
+                            >
+                                So, whether you're launching a new venture, running a growing company, managing a nonprofit, or planning for your future, we're here to make the numbers work for you—and to be in your corner every step of the way. Reach out today, and let's start building the financial foundation that will keep you moving forward.
                             </motion.p>
 
                             {/* Stats */}
