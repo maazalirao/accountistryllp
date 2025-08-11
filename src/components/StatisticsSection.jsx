@@ -7,15 +7,15 @@ const StatisticsSection = () => {
     {
       icon: Shield,
       title: "Quality Assurance",
-      description: "Rigorous quality control processes ensure accuracy and compliance in all our services",
-      color: "from-primary-400 to-primary-600",
-      bgColor: "bg-primary-900/30",
-      iconColor: "text-primary-400"
+      description: "Robust quality assurance protocols uphold the highest standards of accuracy, consistency, and regulatory compliance across all our service offerings.",
+      color: "from-red-400 to-red-600",
+      bgColor: "bg-red-900/30",
+      iconColor: "text-red-400"
     },
     {
       icon: DollarSign,
-      title: "Significant Cost Savings",
-      description: "Reduce operational costs while maintaining high-quality accounting standards",
+      title: "Cost Savings",
+      description: "Achieve significant cost savings through efficient, value-driven, and tailored accounting solutions designed to meet your unique business needs and maximize operational efficiency.",
       color: "from-green-400 to-green-600",
       bgColor: "bg-green-900/30",
       iconColor: "text-green-400"
@@ -23,7 +23,7 @@ const StatisticsSection = () => {
     {
       icon: Globe,
       title: "Global Talent Access",
-      description: "Access to experienced professionals worldwide with diverse expertise",
+      description: "Tap into our network of local and international professionals, bringing both broad experience and specialized expertise to every engagement.",
       color: "from-blue-400 to-blue-600",
       bgColor: "bg-blue-900/30",
       iconColor: "text-blue-400"

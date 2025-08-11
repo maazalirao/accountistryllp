@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaCheckCircle } from 'react-icons/fa';
 
 const testimonials = [
-  { text: "Finding quality accounting at a reasonable price is tough, but Accountistry hits the mark." },
-  { text: "The attention to detail is amazing and the quality of their work is something we really appreciate." },
-  { text: "We were worried about the cost of hiring an accountant, but we received a really competitive quote." },
-  { text: "The owners are approachable and really know their stuff." },
-  { text: "They've made us feel like valued clients from day one." },
-  { text: "Wow, going with Accountistry was a great business decision - the savings have been amazing!" },
-  { text: "They genuinely care about helping small businesses like mine succeed." },
+  { text: "Finding quality accounting at a reasonable price is tough, but Accountistry hits the mark.", name: "Katerina J." },
+  { text: "The attention to detail is amazing and the quality of their work is something we really appreciate.", name: "Rahul T." },
+  { text: "We were worried about the cost of hiring an accountant, but we received a really competitive quote.", name: "Craig R." },
+  { text: "The owners are approachable and really know their stuff.", name: "Maria S." },
+  { text: "They've made us feel like valued clients from day one.", name: "David L." },
+  { text: "Wow, going with Accountistry was a great business decision - the savings have been amazing!", name: "Jennifer K." },
+  { text: "They genuinely care about helping small businesses like mine succeed.", name: "Michael P." },
 ];
 
 const TestimonialSlider = () => {
@@ -48,9 +48,16 @@ const TestimonialSlider = () => {
                   </svg>
                 ))}
               </div>
-              <p className="text-lg text-white leading-8 h-24 transition-all duration-500 mb-9 group-hover:text-white">
+              <p className="text-lg text-white leading-8 h-24 transition-all duration-500 mb-4 group-hover:text-white">
                 {testimonial.text}
               </p>
+              <div className="mt-auto">
+                <p className="text-white font-semibold mb-3">{testimonial.name}</p>
+                <div className="flex items-center space-x-2 bg-green-900/20 px-3 py-1 rounded-full border border-green-500/30">
+                  <FaCheckCircle className="w-4 h-4 text-green-400" />
+                  <span className="text-sm text-green-300 font-medium">Verified Review</span>
+                </div>
+              </div>
             </div>
           ))}
         </div>

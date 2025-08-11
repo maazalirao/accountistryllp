@@ -67,7 +67,7 @@ const Navbar = () => {
               {/* Brand text */}
               <div className="flex flex-col">
                 <motion.span
-                  className="text-white font-extrabold text-xl sm:text-xl md:text-2xl leading-tight group-hover:text-primary-400 transition-all duration-300"
+                  className="text-white font-normal text-xl sm:text-xl md:text-2xl leading-tight group-hover:text-primary-400 transition-all duration-300"
                 >
                   Accountistry
                 </motion.span>
@@ -117,7 +117,7 @@ const Navbar = () => {
             >
               <Button className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg border-0 rounded-xl px-6 transition-colors duration-300">
                 <Link to="/contactus" className="flex items-center space-x-2">
-                  <span>Get Started</span>
+                  <span>Contact Us</span>
                   <motion.div
                     animate={{ x: [0, 2, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
@@ -198,7 +198,7 @@ const Navbar = () => {
               >
                 <Button className="w-full bg-primary-500 hover:bg-primary-600 text-white shadow-lg border-0 rounded-xl transition-colors duration-300">
                   <Link to="/contactus" onClick={() => setIsMobileMenuOpen(false)}>
-                    Get Started
+                    Contact Us
                   </Link>
                 </Button>
               </motion.div>

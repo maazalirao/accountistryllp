@@ -1,60 +1,259 @@
 
+import React from "react";
+import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicesCard from "../components/ServicesCard";
 
 const Careers = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.3
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6 }
+        }
+    };
+
     return (
         <div className="relative min-h-screen w-screen bg-grey-900">
-            <div className="absolute z-[-1] inset-0 bg-gradient-to-br from-grey-900 via-grey-800 to-grey-900"></div>
+            {/* Animated background */}
+            <div className="absolute z-[-1] inset-0 bg-gradient-to-br from-grey-900 via-grey-800 to-grey-900">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1),transparent_50%)]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(34,197,94,0.05),transparent_50%)]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(34,197,94,0.05),transparent_50%)]"></div>
+            </div>
 
             <Navbar />
 
-            <div className="relative flex items-center justify-center">
-                <div className="rounded-xl flex flex-col items-center justify-center w-[85%] space-y-8 px-5 md:px-10">
-                    <img
-                        src="https://res.cloudinary.com/dm56xy1oj/image/upload/v1725991623/careers_hed6pu.svg"
-                        className="w-[60%] md:w-[35%] h-[60%] md:h-[35%] z-100 rounded-xl animate-slideInFromRight"
-                        alt="Careers"
+            {/* Hero Section */}
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+            >
+                {/* Background with overlay */}
+                <div className="absolute inset-0">
+                    <motion.img
+                        initial={{ scale: 1.1 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 1.5 }}
+                        src="/successfully-young-businessman-keeping-arms-raised-expressing-positivity-while-standing-outdoors.jpg"
+                        alt="Successful professional celebrating career growth"
+                        className="w-full h-full object-cover"
                     />
-                    <div className="w-full md:w-[60%]">
-                        <p className="text-white font-primary md:text-justify text-center text-lg md:text-2xl mt-[-10%] md:mt-[-10%] animate-slideInFromLeft">
-                            <span>
-                                Accountistry prides itself in providing its clients with top-notch accounting professionals. Do you think you have what it takes to offer exceptional client service? If so, please apply to any of our open positions below.<br /> <br />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-slate-900/90"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-grey-900/50 to-transparent"></div>
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6"
+                    >
+                        Join Our{" "}
+                        <span className="bg-gradient-to-r from-primary-400 via-primary-300 to-primary-500 bg-clip-text text-transparent">
+                            Team
+                        </span>
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
+                    >
+                        Build your career with a team that values growth, innovation, and excellence
+                    </motion.p>
+                </div>
+
+                {/* Floating elements */}
+                <motion.div
+                    animate={{
+                        y: [-10, 10, -10],
+                        rotate: [0, 5, 0],
+                    }}
+                    transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="absolute top-20 right-10 w-16 h-16 bg-gradient-to-r from-primary-400/20 to-primary-500/20 rounded-full blur-xl"
+                ></motion.div>
+                <motion.div
+                    animate={{
+                        y: [10, -10, 10],
+                        rotate: [0, -5, 0],
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 2
+                    }}
+                    className="absolute bottom-20 left-10 w-12 h-12 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-full blur-xl"
+                ></motion.div>
+            </motion.div>
+
+            {/* Benefits Section */}
+            <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="relative flex justify-center mt-16 md:mt-20 mb-20"
+            >
+                <div className="w-[90%] max-w-7xl px-5 md:px-10">
+                    {/* Section Header */}
+                    <motion.div 
+                        variants={itemVariants}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                            Why Work{" "}
+                            <span className="bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">
+                                With Us
                             </span>
-                        </p>
-                    </div>
+                        </h2>
+                        <div className="w-24 h-1 bg-gradient-to-r from-primary-400 to-primary-500 mx-auto rounded-full"></div>
+                    </motion.div>
+
+                    <motion.div 
+                        variants={containerVariants}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                    >
+                        {[
+                            {
+                                title: 'Competitive Salary & Benefits',
+                                description: 'Attractive compensation packages with comprehensive health, dental, and retirement benefits.',
+                                icon: '💰'
+                            },
+                            {
+                                title: 'Professional Development',
+                                description: 'Continuous learning opportunities, certifications, and skill enhancement programs.',
+                                icon: '📚'
+                            },
+                            {
+                                title: 'Flexible Work Environment',
+                                description: 'Hybrid work options, flexible schedules, and modern workspace facilities.',
+                                icon: '🏠'
+                            },
+                            {
+                                title: 'Health & Wellness Programs',
+                                description: 'Comprehensive wellness initiatives including mental health support and fitness programs.',
+                                icon: '🏃‍♂️'
+                            },
+                            {
+                                title: 'Team Building Activities',
+                                description: 'Regular team events, social gatherings, and collaborative projects to build strong relationships.',
+                                icon: '🤝'
+                            },
+                            {
+                                title: 'Career Growth Opportunities',
+                                description: 'Clear advancement paths, mentorship programs, and leadership development initiatives.',
+                                icon: '📈'
+                            }
+                        ].map((benefit, index) => (
+                            <motion.div key={benefit.title} variants={itemVariants}>
+                                <ServicesCard 
+                                    title={benefit.title} 
+                                    description={benefit.description}
+                                    icon={benefit.icon}
+                                    delay={index * 0.1}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
 
-            <h1 className="text-white justify-center text-center font-bold font-primary text-3xl md:text-5xl mt-5 md:mt-5 animate-slideInFromLeft">
-                Benefits
-            </h1>
+            {/* Open Positions Section */}
+            <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="relative flex justify-center mt-16 md:mt-20 mb-20"
+            >
+                <div className="w-[90%] max-w-7xl px-5 md:px-10">
+                    {/* Section Header */}
+                    <motion.div 
+                        variants={itemVariants}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                            Open{" "}
+                            <span className="bg-gradient-to-r from-primary-400 to-primary-500 bg-clip-text text-transparent">
+                                Positions
+                            </span>
+                        </h2>
+                        <div className="w-24 h-1 bg-gradient-to-r from-primary-400 to-primary-500 mx-auto rounded-full"></div>
+                    </motion.div>
 
-            <div className="relative flex justify-center mt-5 md:mt-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5 md:px-10 lg:px-20">
-                    <ServicesCard title={'Competitive Compensation'} />
-                    <ServicesCard title={'Discretionary Bonuses'} />
-                    <ServicesCard title={'Health Insurance'} />
-                    <ServicesCard title={'Flexible Schedules'} />
-                    <ServicesCard title={'Professional Training'} />
-                    <ServicesCard title={'Generous Paid-Time Off'} />
+                    <motion.div 
+                        variants={containerVariants}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                    >
+                        {[
+                            {
+                                title: 'Senior Accountant',
+                                description: 'Lead complex accounting projects and mentor junior staff. CPA preferred with 5+ years experience.',
+                                icon: '👨‍💼'
+                            },
+                            {
+                                title: 'Tax Specialist',
+                                description: 'Prepare and review tax returns for individuals and businesses. Tax certification required.',
+                                icon: '📊'
+                            },
+                            {
+                                title: 'Bookkeeping Associate',
+                                description: 'Maintain accurate financial records and assist with daily accounting operations.',
+                                icon: '📝'
+                            },
+                            {
+                                title: 'Financial Analyst',
+                                description: 'Analyze financial data and create reports to support business decision-making.',
+                                icon: '📈'
+                            },
+                            {
+                                title: 'Audit Manager',
+                                description: 'Lead audit engagements and ensure compliance with accounting standards and regulations.',
+                                icon: '🔍'
+                            },
+                            {
+                                title: 'Client Relations Coordinator',
+                                description: 'Manage client relationships and coordinate service delivery across multiple departments.',
+                                icon: '🤝'
+                            }
+                        ].map((position, index) => (
+                            <motion.div key={position.title} variants={itemVariants}>
+                                <ServicesCard 
+                                    title={position.title} 
+                                    description={position.description}
+                                    icon={position.icon}
+                                    delay={index * 0.1}
+                                    buttonText="Apply Now"
+                                    onButtonClick={() => window.open('mailto:careers@accountistry.com?subject=Application for ' + position.title, '_blank')}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
-            </div>
-
-            <div className="flex justify-center items-center mt-20 md:mt-32 mb-5">
-                <h1 className="text-white text-center font-bold font-primary text-3xl md:text-5xl animate-slideInFromLeft rounded-xl px-8 py-4">
-                    Open Positions
-                </h1>
-            </div>
-
-            <div className="relative flex justify-center mt-5 md:mt-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5 md:px-10 lg:px-20">
-                    <ServicesCard title={'Student / Internship Positions'} text={'Apply'} />
-                    <ServicesCard title={'Entry Level Positions'} text={'Apply'} />
-                    <ServicesCard title={'Experienced Positions'} text={'Apply'} />
-                </div>
-            </div>
+            </motion.div>
 
             <Footer />
         </div>

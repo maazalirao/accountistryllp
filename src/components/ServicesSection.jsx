@@ -20,7 +20,8 @@ const ServicesSection = () => {
       title: "Tax Services",
       items: [
         "Personal Tax Returns",
-        "Business Tax Returns (Partnerships, LLCs, S-Corps)",
+        "Business Tax Returns",
+        "(Partnerships, LLCs, S-Corporations)",
         "Payroll and Sales Tax Filings",
         "IRS Representations"
       ]
@@ -109,7 +110,7 @@ const ServicesSection = () => {
               variants={itemVariants}
               className="text-lg text-grey-300 max-w-3xl mx-auto"
             >
-              Comprehensive accounting solutions tailored to meet your business needs
+               Comprehensive service offerings tailored to meet all your accounting needs
             </motion.p>
           </motion.div>
 

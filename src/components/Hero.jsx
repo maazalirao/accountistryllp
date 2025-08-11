@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Sparkles, Globe2, Zap, DollarSign } from "lucide-react";
+import { ArrowRight, CheckCircle, Users, Award, TrendingUp, Sparkles, Globe2, Headphones, DollarSign } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Link } from "react-router-dom";
@@ -9,10 +9,10 @@ import AnimatedBackground from "./AnimatedBackground";
 
 const Hero = () => {
   const features = [
-    { icon: Globe2, text: "Bookkeeping", color: "text-primary-400" },
-    { icon: Zap, text: "Personal & Business Taxes", color: "text-primary-300" },
-    { icon: TrendingUp, text: "Audits & Reviews", color: "text-primary-500" },
-    { icon: Award, text: "Financial Statement Compilations", color: "text-primary-600" }
+    { icon: CheckCircle, text: "Bookkeeping", color: "text-primary-400" },
+    { icon: CheckCircle, text: "Personal & Business Taxes", color: "text-primary-400" },
+    { icon: CheckCircle, text: "Audits & Reviews", color: "text-primary-400" },
+    { icon: CheckCircle, text: "Financial Statement Compilations", color: "text-primary-400" }
   ];
 
   const containerVariants = {
@@ -84,7 +84,7 @@ const Hero = () => {
               {/* Enhanced subtitle with better mobile sizing */}
               <motion.p
                 variants={itemVariants}
-                className="text-base sm:text-lg lg:text-xl text-primary-100 font-medium leading-relaxed max-w-2xl mb-1 sm:mb-2 text-center lg:text-left"
+                className="text-base sm:text-lg lg:text-xl text-primary-100 font-medium leading-relaxed max-w-2xl mb-1 sm:mb-2 text-justify"
               >
                 We are a full-service CPA firm based in Southern California, offering a comprehensive suite of accounting services tailored to meet the diverse needs of our clients. Our team is composed of 
                 <motion.span
@@ -97,15 +97,15 @@ const Hero = () => {
                     ease: "easeInOut"
                   }}
                   className="font-bold"
-                > experienced CPAs and seasoned accounting professionals</motion.span> who bring deep industry knowledge and a commitment to delivering high-quality, personalized service. Our services
+                > experienced CPAs and seasoned accounting professionals</motion.span> who bring deep industry knowledge and a commitment to delivering high-quality, personalized service. Our services include:
               </motion.p>
               
              
 
-              {/* Enhanced features list with mobile responsiveness */}
+              {/* Enhanced features list with uniform sizing */}
               <motion.div
                 variants={itemVariants}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mx-auto lg:mx-0 max-w-xs sm:max-w-none"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto lg:mx-0 w-full max-w-2xl"
               >
                 {features.map((feature, index) => (
                   <motion.div
@@ -114,28 +114,27 @@ const Hero = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1 + index * 0.1, duration: 0.6 }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="flex items-center space-x-3 p-3 sm:p-4 rounded-xl glass border border-primary-600/30 hover:border-primary-400/80 transition-all duration-300 group magnetic bg-primary-900/20 hover:bg-primary-800/30"
+                    className="flex items-center justify-start space-x-3 p-4 h-16 rounded-xl glass border border-primary-600/30 hover:border-primary-400/80 transition-all duration-300 group magnetic bg-primary-900/20 hover:bg-primary-800/30"
                   >
                     <motion.div
                       animate={{
-                        rotate: [0, 10, -10, 0],
                         scale: [1, 1.1, 1]
                       }}
                       transition={{
-                        duration: 3,
+                        duration: 2,
                         repeat: Infinity,
-                        delay: index * 0.5,
+                        delay: index * 0.3,
                         ease: "easeInOut"
                       }}
                     >
-                      <feature.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.color} flex-shrink-0 group-hover:scale-110 transition-transform`} />
+                      <feature.icon className={`w-6 h-6 ${feature.color} flex-shrink-0 group-hover:scale-110 transition-transform`} />
                     </motion.div>
-                    <span className="text-primary-200 font-medium group-hover:text-primary-100 transition-colors text-sm sm:text-base">{feature.text}</span>
+                    <span className="text-primary-200 font-medium group-hover:text-primary-100 transition-colors text-base leading-tight">{feature.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
 
-              {/* Explore Services button - positioned after feature boxes */}
+              {/* Get Started Today button - moved up after feature boxes */}
               <motion.div
                 variants={itemVariants}
                 className="flex justify-center lg:justify-start pt-4"
@@ -143,35 +142,29 @@ const Hero = () => {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                >
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto border-grey-400 text-black hover:bg-grey-700 hover:text-white hover:border-primary-400 transition-all duration-300 rounded-2xl px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm">
-                    <Link to="/services" className="flex items-center justify-center">
-                      <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Explore Complete List of Services
-                    </Link>
-                  </Button>
-                </motion.div>
-              </motion.div>
-
-              {/* Get Started Today button - positioned below Explore Services */}
-              <motion.div
-                variants={itemVariants}
-                className="flex justify-center lg:justify-start pt-3"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                   className="group"
                 >
-                  <Button size="lg" className="w-full sm:w-auto bg-primary-500 hover:bg-primary-600 text-white shadow-lg border-0 rounded-2xl px-8 sm:px-12 py-3 sm:py-4 text-base sm:text-lg font-semibold transition-all duration-300">
+                  <Button size="lg" className="w-full sm:w-auto bg-primary-500 hover:bg-primary-600 text-white shadow-lg border-0 rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105">
                     <Link to="/contactus" className="flex items-center justify-center">
-                      <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-pulse" />
+                      <motion.div
+                        animate={{ 
+                          rotate: [0, 10, -10, 0],
+                          scale: [1, 1.1, 1]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        <Headphones className="w-5 h-5 mr-3 group-hover:animate-pulse" />
+                      </motion.div>
                       Get Started Today
                       <motion.div
                         animate={{ x: [0, 4, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
                       >
-                        <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                       </motion.div>
                     </Link>
                   </Button>
@@ -200,46 +193,12 @@ const Hero = () => {
                     <motion.img
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
-                      src="https://plus.unsplash.com/premium_photo-1679923813998-6603ee2466c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
-                      alt="Financial analytics and accounting dashboard with charts and graphs"
+                      src="/skyscrapers-blue-sky-with-clouds.jpg"
+                      alt="Modern skyscrapers reaching towards blue sky with clouds"
                       className="w-full h-full object-cover rounded-2xl sm:rounded-3xl filter brightness-105 contrast-105"
                     />
                   </CardContent>
                 </Card>
-                
-                {/* Reduced floating elements with mobile-friendly sizes */}
-                <motion.div
-                  animate={{
-                    y: [-4, 4, -4],
-                    rotate: [0, 5, 0],
-                    scale: [1, 1.05, 1]
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-primary-400 to-yellow-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl hover-glow"
-                >
-                  <DollarSign className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" />
-                </motion.div>
-
-                <motion.div
-                  animate={{
-                    y: [4, -4, 4],
-                    rotate: [0, -5, 0],
-                    scale: [1, 1.05, 1]
-                  }}
-                  transition={{
-                    duration: 7,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                  className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl hover-glow"
-                >
-                  <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
-                </motion.div>
               </motion.div>
             </motion.div>
           </div>

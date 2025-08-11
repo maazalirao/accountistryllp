@@ -9,7 +9,7 @@ const Footer = () => {
     { name: "Services", href: "/services" },
     { name: "Industries", href: "/industries" },
     { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contactus" }
+    { name: "Contact Us", href: "/contactus" }
   ];
 
   const resources = [
@@ -21,6 +21,8 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61563816361606", external: true },
+    { name: "Instagram", href: "https://www.instagram.com/accountistry", external: true },
+    { name: "Twitter/X", href: "https://www.twitter.com/accountistry", external: true },
     { name: "Yelp", href: "https://www.yelp.com/biz/accountistry-lake-elsinore-2", external: true }
   ];
 
@@ -28,9 +30,9 @@ const Footer = () => {
     <footer className="bg-grey-900 text-white">
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company info */}
-          <div className="lg:col-span-1">
+          <div className="md:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-10 h-10 overflow-hidden flex items-center justify-center">
                 <img
@@ -40,13 +42,13 @@ const Footer = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-white font-bold text-lg leading-tight">
+                <span className="text-white font-bold text-xl leading-tight">
                   Accountistry
                 </span>
               </div>
             </div>
             
-            <p className="text-grey-300 mb-6 leading-relaxed">
+            <p className="text-grey-300 mb-6 leading-relaxed text-sm">
               We are a full-service CPA firm based in Southern California, offering a comprehensive suite of accounting services tailored to meet the diverse needs of our clients. Our team is composed of experienced CPAs and seasoned accounting professionals who bring deep industry knowledge and a commitment to delivering high-quality, personalized service.
             </p>
           </div>
@@ -127,16 +129,24 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <a href="mailto:info@accountistryllp.com" className="text-grey-300 hover:text-primary-400 transition-colors">
+                <a href="mailto:info@accountistryllp.com" className="text-grey-300 hover:text-primary-400 transition-colors break-all">
                   info@accountistryllp.com
                 </a>
               </div>
               
-              <div className="pt-4">
-                <p className="text-grey-300 leading-relaxed">
-                  Ready to learn more? Send us a note about your accounting needs or 
-                  call us for a quick conversation about how we can help your business grow.
-                </p>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
+                <div className="text-grey-300">
+                  <p>Southern California</p>
+                  <p className="text-sm">Serving clients nationwide</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <Clock className="w-5 h-5 text-primary-400 flex-shrink-0" />
+                <div className="text-grey-300">
+                  <p className="text-sm">Mon - Fri: 9:00 AM - 6:00 PM</p>
+                </div>
               </div>
             </div>
           </div>

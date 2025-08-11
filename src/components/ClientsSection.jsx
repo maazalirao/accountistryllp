@@ -1,23 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { User, Building, Heart } from "lucide-react";
+import { User, Building, Heart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ClientsSection = () => {
   const clients = [
     {
       icon: User,
-      title: "Individuals",
-      description: "Personal tax preparation, financial planning, and individual accounting services tailored to your unique needs."
+      title: "Individuals"
     },
     {
       icon: Building,
-      title: "Small and Medium Enterprises",
-      description: "Comprehensive business accounting, bookkeeping, and financial management solutions for growing companies."
+      title: "Small and Medium Enterprises"
     },
     {
       icon: Heart,
-      title: "Non-Profit Organizations",
-      description: "Specialized accounting services for non-profits, including compliance, grant management, and financial reporting."
+      title: "Non-Profit Organizations"
     }
   ];
 
@@ -93,14 +91,14 @@ const ClientsSection = () => {
               variants={itemVariants}
               className="text-lg text-grey-300 max-w-3xl mx-auto"
             >
-              Trusted by diverse clients across various sectors and industries
+              Trusted by clients of all sizes across a wide range of sectors and industries
             </motion.p>
           </motion.div>
 
           {/* Clients Grid */}
           <motion.div 
             variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
           >
             {clients.map((client, index) => {
               const IconComponent = client.icon;
@@ -122,13 +120,29 @@ const ClientsSection = () => {
                   <h3 className="text-xl font-bold text-white mb-4">
                     {client.title}
                   </h3>
-                  
-                  <p className="text-grey-300 leading-relaxed">
-                    {client.description}
-                  </p>
                 </motion.div>
               );
             })}
+          </motion.div>
+
+          {/* Explore Industries Button */}
+          <motion.div 
+            variants={itemVariants}
+            className="text-center"
+          >
+            <Link to="/industries">
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Explore Complete List of Industries
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
