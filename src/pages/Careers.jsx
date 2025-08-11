@@ -54,7 +54,7 @@ const Careers = () => {
                         alt="Successful professional celebrating career growth"
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-slate-900/90"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-grey-900/90 via-grey-800/80 to-grey-900/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-grey-900/50 to-transparent"></div>
                 </div>
 
