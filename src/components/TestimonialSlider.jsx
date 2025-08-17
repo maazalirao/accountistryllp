@@ -14,16 +14,44 @@ const testimonials = [
 const TestimonialSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const getItemsPerView = () => {
+    if (window.innerWidth >= 1024) return 4; // lg screens
+    if (window.innerWidth >= 640) return 2;  // sm screens
+    return 1; // mobile
+  };
+
+  const [itemsPerView, setItemsPerView] = useState(getItemsPerView());
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setItemsPerView(getItemsPerView());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const maxIndex = Math.max(0, testimonials.length - itemsPerView);
+
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      prevIndex === 0 ? maxIndex : prevIndex - 1
     );
   };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      prevIndex >= maxIndex ? 0 : prevIndex + 1
     );
+  };
+
+  const getVisibleTestimonials = () => {
+    const visible = [];
+    for (let i = 0; i < itemsPerView; i++) {
+      const index = (currentIndex + i) % testimonials.length;
+      visible.push({ ...testimonials[index], originalIndex: index });
+    }
+    return visible;
   };
 
   return (
@@ -31,11 +59,11 @@ const TestimonialSlider = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-primary relative">
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {testimonials.slice(currentIndex, currentIndex + 4).map((testimonial, index) => (
+          {getVisibleTestimonials().map((testimonial, index) => (
             <div
-              key={index}
+              key={`${testimonial.originalIndex}-${currentIndex}`}
               className={`group bg-grey-800 border border-grey-700 rounded-2xl p-6 transition-all duration-500 hover:border-primary-400 hover:bg-grey-700 
-              ${index === 0 || index === 3 ? 'opacity-50 scale-90' : ''} // Half visibility for side items
+              ${(itemsPerView === 4 && (index === 0 || index === 3)) ? 'opacity-50 scale-90' : ''} // Half visibility for side items on desktop
               `}
             >
               <div className="flex items-center mb-9 gap-2 text-amber-500 transition-all duration-500 group-hover:text-primary-400">
@@ -90,6 +118,29 @@ const TestimonialSlider = () => {
           >
             <FaChevronRight className="h-6 w-6 text-white" />
           </button>
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {Array.from({ length: maxIndex + 1 }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentIndex === index
+                  ? 'bg-primary-500 scale-125'
+                  : 'bg-grey-600 hover:bg-grey-500'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Testimonial Counter */}
+        <div className="text-center mt-4">
+          <span className="text-sm text-grey-400">
+            Showing {Math.min(currentIndex + itemsPerView, testimonials.length)} of {testimonials.length} testimonials
+          </span>
         </div>
       </div>
     </section>
