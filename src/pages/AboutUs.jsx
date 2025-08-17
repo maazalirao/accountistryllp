@@ -175,7 +175,7 @@ const AboutUs = () => {
                                 <img
                                     src="/businessmen-looking-through-window.jpg"
                                     alt="Professional Business Team"
-                                    className="w-full h-64 sm:h-80 md:h-96 object-cover object-center transform hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-64 sm:h-80 md:h-96 object-contain object-center transform hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary-500/30 to-transparent"></div>
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary-400/10"></div>
