@@ -21,8 +21,8 @@ const Footer = () => {
 
   const socialLinks = [
     { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61563816361606", external: true },
-    { name: "Instagram", href: "https://www.instagram.com/accountistry", external: true },
-    { name: "Twitter/X", href: "https://www.twitter.com/accountistry", external: true },
+    { name: "Instagram", href: "https://www.instagram.com/accountistry.llp/", external: true },
+        { name: "Twitter/X", href: "https://x.com/AccountistryLLP", external: true },
     { name: "Yelp", href: "https://www.yelp.com/biz/accountistry-lake-elsinore-2", external: true }
   ];
 
@@ -119,34 +119,39 @@ const Footer = () => {
               Contact Us
             </h3>
             
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-primary-400 flex-shrink-0" />
+            <div className="flex flex-wrap items-center gap-6 text-sm">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 text-primary-400 flex-shrink-0" />
                 <a href="tel:+19512231881" className="text-grey-300 hover:text-primary-400 transition-colors">
                   (951) 223-1881
                 </a>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <a href="mailto:info@accountistryllp.com" className="text-grey-300 hover:text-primary-400 transition-colors break-all">
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4 text-primary-400 flex-shrink-0" />
+                <a href="mailto:info@accountistryllp.com" className="text-grey-300 hover:text-primary-400 transition-colors">
                   info@accountistryllp.com
                 </a>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-primary-400 flex-shrink-0 mt-1" />
-                <div className="text-grey-300">
-                  <p>Southern California</p>
-                  <p className="text-sm">Serving clients nationwide</p>
-                </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-4 h-4 text-primary-400 flex-shrink-0" />
+                <span className="text-grey-300">
+                  Southern California
+                </span>
               </div>
               
-              <div className="flex items-center space-x-3">
-                <Clock className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                <div className="text-grey-300">
-                  <p className="text-sm">Mon - Fri: 9:00 AM - 6:00 PM</p>
-                </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-grey-300">
+                  Serving clients nationwide
+                </span>
+              </div>
+              
+              <div className="flex items-center space-x-2">
+                <Clock className="w-4 h-4 text-primary-400 flex-shrink-0" />
+                <span className="text-grey-300">
+                  Mon - Fri: 9:00 AM - 6:00 PM
+                </span>
               </div>
             </div>
           </div>

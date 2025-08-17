@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Headphones } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
@@ -32,6 +32,7 @@ const Navbar = () => {
     { name: "Services", href: "/services" },
     { name: "Industries", href: "/industries" },
     { name: "Careers", href: "/careers" },
+    { name: "FAQ", href: "/faq" },
   ];
 
   const isActive = (href) => location.pathname === href;
@@ -122,7 +123,7 @@ const Navbar = () => {
                     animate={{ x: [0, 2, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   >
-                    <Sparkles className="w-4 h-4" />
+                    <Headphones className="w-4 h-4" />
                   </motion.div>
                 </Link>
               </Button>

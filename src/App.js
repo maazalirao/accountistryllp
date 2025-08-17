@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Industries from './pages/Industries';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
+import FAQ from './pages/FAQ';
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/industries' element={<Industries/>}/>
         <Route path='/careers' element={<Careers/>}/>
         <Route path='/contactus' element={<ContactUs/>}/>
+        <Route path='/faq' element={<FAQ/>}/>
       </Routes>
     </BrowserRouter>
   );

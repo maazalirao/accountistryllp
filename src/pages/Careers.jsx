@@ -210,34 +210,19 @@ const Careers = () => {
                     >
                         {[
                             {
-                                title: 'Senior Accountant',
-                                description: 'Lead complex accounting projects and mentor junior staff. CPA preferred with 5+ years experience.',
-                                icon: '👨‍💼'
+                                title: 'Staff Accountant / Bookkeeper',
+                                description: 'Maintain accurate financial records, assist with daily accounting operations, and support bookkeeping functions. Location: Remote',
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
                             },
                             {
-                                title: 'Tax Specialist',
-                                description: 'Prepare and review tax returns for individuals and businesses. Tax certification required.',
-                                icon: '📊'
+                                title: 'Accounting Manager',
+                                description: 'Lead accounting operations, manage financial reporting, and oversee accounting staff. Location: Remote',
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                             },
                             {
-                                title: 'Bookkeeping Associate',
-                                description: 'Maintain accurate financial records and assist with daily accounting operations.',
-                                icon: '📝'
-                            },
-                            {
-                                title: 'Financial Analyst',
-                                description: 'Analyze financial data and create reports to support business decision-making.',
-                                icon: '📈'
-                            },
-                            {
-                                title: 'Audit Manager',
-                                description: 'Lead audit engagements and ensure compliance with accounting standards and regulations.',
-                                icon: '🔍'
-                            },
-                            {
-                                title: 'Client Relations Coordinator',
-                                description: 'Manage client relationships and coordinate service delivery across multiple departments.',
-                                icon: '🤝'
+                                title: 'Administrative Assistant',
+                                description: 'Provide administrative support, manage client communications, and assist with office operations. Location: Remote',
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                             }
                         ].map((position, index) => (
                             <motion.div key={position.title} variants={itemVariants}>

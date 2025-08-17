@@ -77,106 +77,106 @@ const LandingPage = () => {
           
           {/* Moving Banner */}
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-12 sm:space-x-16">
+            <div className="flex animate-scroll space-x-6 sm:space-x-8 md:space-x-12 lg:space-x-16">
               {/* First set of logos */}
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/One Ocean.png" 
                   alt="One Ocean County" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Mr. Rocco's.jpg" 
                   alt="Mr. Roccos 909" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Niki's.png" 
                   alt="Nikisha Halal Grill" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Balance Health.png" 
                   alt="Balance Health" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Florida Voices.avif" 
                   alt="Healthy FLA" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/ICLR.png" 
                   alt="ICLR" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Silicon.png" 
                   alt="Silicon.net.pk" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
               
               {/* Duplicate set for seamless loop */}
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/One Ocean.png" 
                   alt="One Ocean County" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Mr. Rocco's.jpg" 
                   alt="Mr. Roccos 909" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Niki's.png" 
                   alt="Nikisha Halal Grill" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Balance Health.png" 
                   alt="Balance Health" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Florida Voices.avif" 
                   alt="Healthy FLA" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/ICLR.png" 
                   alt="ICLR" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[200px] h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-4">
+              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
                 <img 
                   src="/icons/Silicon.png" 
                   alt="Silicon.net.pk" 
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
                 />
               </div>
             </div>
@@ -192,8 +192,9 @@ const LandingPage = () => {
               What Our Clients Say
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-grey-300 max-w-3xl mx-auto">
-              Don't just take our word for it; see what our satisfied clients have to say about us.
+              Don't just take our word for it; see what our satisfied clients have to say about us
             </p>
+
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

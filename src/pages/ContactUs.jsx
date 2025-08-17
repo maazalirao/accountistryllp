@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
-import emailjs from 'emailjs-com'; // Import EmailJS SDK
+import emailjs from 'emailjs-com';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -10,9 +10,8 @@ const ContactUs = () => {
         email: '',
         phoneNumber: '',
         city: '',
-        state: '',
+        subject: '',
         inquiry: '',
-        to_email: 'info@accountistryllp.com' // Adding recipient email
     });
     
     const [messageSent, setMessageSent] = useState(false);
@@ -27,27 +26,48 @@ const ContactUs = () => {
         e.preventDefault();
         setError(false);
         
-        // Create template parameters with the recipient email
+        // Validate form data
+        if (!formData.fullName || !formData.email || !formData.inquiry) {
+            alert('Please fill in all required fields (Name, Email, and Message)');
+            return;
+        }
+        
+        // Initialize EmailJS with your public key
+        emailjs.init('Jglgb34WZ5hr5qe1f');
+        
+        // Create template parameters with all contact information
         const templateParams = {
-            ...formData,
-            to_email: 'info@accountistryllp.com', // Ensure emails go to this address
-            subject: `Contact Form Submission from ${formData.fullName}`,
-            reply_to: formData.email
+            from_name: formData.fullName,
+            from_email: formData.email,
+            phone_number: formData.phoneNumber,
+            city: formData.city,
+            subject: formData.subject,
+            message: formData.inquiry,
+            time: new Date().toLocaleString(),
+            to_email: 'maazaltaf1027@gmail.com',
+            reply_to: 'maazaltaf1027@gmail.com',
+            email_subject: 'Accountistry Contact Information - New Inquiry'
         };
 
+        console.log('Attempting to send email with params:', templateParams);
+        console.log('Service ID: service_i95y61l');
+        console.log('Template ID: template_o089pra');
+        console.log('Public Key: Jglgb34WZ5hr5qe1f');
+        
         // Send email using EmailJS
-        emailjs.send('service_1wgwmzl', 'template_3jobarh', templateParams, 'DtyzG95w7OtDJdrGU')
+        emailjs.send('service_i95y61l', 'template_o089pra', templateParams)
             .then((response) => {
-                console.log('Email sent successfully:', response.status, response.text);
+                console.log('✅ Email sent successfully!');
+                console.log('Response status:', response.status);
+                console.log('Response text:', response.text);
                 setMessageSent(true);
                 setFormData({
                     fullName: '',
                     email: '',
                     phoneNumber: '',
                     city: '',
-                    state: '',
+                    subject: '',
                     inquiry: '',
-                    to_email: 'info@accountistryllp.com'
                 });
                 
                 // Auto-hide success message after 5 seconds
@@ -55,9 +75,39 @@ const ContactUs = () => {
                     setMessageSent(false);
                 }, 5000);
                 
-            }, (error) => {
-                console.error('Failed to send email:', error);
+            })
+            .catch((error) => {
+                console.error('❌ Failed to send email!');
+                console.error('Full error object:', error);
+                
+                // More detailed error logging
+                if (error.status) {
+                    console.error('Error status:', error.status);
+                }
+                if (error.text) {
+                    console.error('Error text:', error.text);
+                }
+                if (error.message) {
+                    console.error('Error message:', error.message);
+                }
+                
+                // Common error explanations
+                if (error.status === 400) {
+                    console.error('❌ Bad Request - Check your template ID and parameters');
+                } else if (error.status === 401) {
+                    console.error('❌ Unauthorized - Check your public key');
+                } else if (error.status === 404) {
+                    console.error('❌ Not Found - Check your service ID or template ID');
+                } else if (error.status === 422) {
+                    console.error('❌ Invalid template parameters - Check your template variables');
+                }
+                
                 setError(true);
+                
+                // Auto-hide error message after 5 seconds
+                setTimeout(() => {
+                    setError(false);
+                }, 5000);
             });
     };
 
@@ -190,7 +240,7 @@ const ContactUs = () => {
                                 variants={itemVariants}
                                 className="text-lg text-slate-300 leading-relaxed mb-8"
                             >
-                                Ready to take your business to the next level? Our team of experts is here to help you achieve your financial goals. Reach out to us today and discover how we can transform your business operations.
+                                Ready to take your finances to the next level? Our accounting experts are here to help you achieve your goals.
                             </motion.p>
 
                             {/* Contact Cards */}
@@ -302,17 +352,17 @@ const ContactUs = () => {
                                     </div>
 
                                     <div>
-                                        <label className="block text-slate-300 text-sm font-semibold mb-2" htmlFor="state">
-                                            State
+                                        <label className="block text-slate-300 text-sm font-semibold mb-2" htmlFor="subject">
+                                            Subject
                                         </label>
                                         <input
                                             type="text"
-                                            id="state"
-                                            name="state"
-                                            value={formData.state}
+                                            id="subject"
+                                            name="subject"
+                                            value={formData.subject}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 bg-grey-700/50 border border-grey-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent text-white placeholder-slate-400 transition-all duration-300"
-                                            placeholder="Your state"
+                                            placeholder="Subject of your inquiry"
                                             required
                                         />
                                     </div>

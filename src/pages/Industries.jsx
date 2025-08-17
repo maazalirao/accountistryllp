@@ -134,7 +134,7 @@ const Industries = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
+                        className="text-xl sm:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed whitespace-nowrap"
                     >
                         Specialized expertise across diverse sectors to meet your unique business needs
                     </motion.p>
@@ -199,62 +199,62 @@ const Industries = () => {
                             {
                                 title: 'Healthcare & Medical',
                                 description: 'Specialized accounting and financial services for healthcare providers, medical practices, and pharmaceutical companies.',
-                                icon: '🏥'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
                             },
                             {
                                 title: 'Technology & Software',
                                 description: 'Expert financial guidance for tech startups, software companies, and digital transformation initiatives.',
-                                icon: '💻'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
                             },
                             {
                                 title: 'Real Estate & Property',
                                 description: 'Comprehensive financial services for real estate developers, property managers, and investment firms.',
-                                icon: '🏢'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h1v-9c0-2.76 2.24-5 5-5s5 2.24 5 5v9h1c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9zM9 12v7h6v-7c0-1.66-1.34-3-3-3s-3 1.34-3 3z"/></svg>
                             },
                             {
                                 title: 'Manufacturing & Distribution',
                                 description: 'Tailored accounting solutions for manufacturers, distributors, and supply chain operations.',
-                                icon: '🏭'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
                             },
                             {
                                 title: 'Retail & E-commerce',
                                 description: 'Financial expertise for retail businesses, online stores, and omnichannel commerce operations.',
-                                icon: '🛍️'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
                             },
                             {
                                 title: 'Professional Services',
                                 description: 'Specialized support for consulting firms, law practices, and other professional service providers.',
-                                icon: '💼'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                             },
                             {
                                 title: 'Construction & Engineering',
                                 description: 'Project-based accounting and financial management for construction and engineering firms.',
-                                icon: '🏗️'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M13.783 15.172l2.121-2.121 5.996 5.996-2.121 2.121zM17.5 10c1.38 0 2.5-1.12 2.5-2.5S18.88 5 17.5 5 15 6.12 15 7.5s1.12 2.5 2.5 2.5zM8.9 6L12 2.9 15.1 6 12 9.1 8.9 6zm6.1 8h4v4h-4v-4zM8 16l4 4-4 4-4-4 4-4z"/></svg>
                             },
                             {
                                 title: 'Hospitality & Tourism',
                                 description: 'Financial services designed for hotels, restaurants, travel agencies, and entertainment venues.',
-                                icon: '🏨'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H9V7H1v10h22V7z"/></svg>
                             },
                             {
                                 title: 'Non-Profit Organizations',
                                 description: 'Grant management, compliance, and financial reporting for charitable and non-profit organizations.',
-                                icon: '🤝'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                             },
                             {
                                 title: 'Financial Services',
                                 description: 'Regulatory compliance and specialized accounting for banks, credit unions, and financial institutions.',
-                                icon: '🏦'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
                             },
                             {
                                 title: 'Education & Training',
                                 description: 'Financial management solutions for schools, universities, and educational service providers.',
-                                icon: '🎓'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
                             },
                             {
                                 title: 'Transportation & Logistics',
                                 description: 'Cost accounting and financial optimization for transportation companies and logistics providers.',
-                                icon: '🚛'
+                                icon: <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
                             }
                         ].map((industry, index) => (
                             <motion.div key={industry.title} variants={itemVariants}>

@@ -57,8 +57,8 @@ const AboutUs = () => {
                         initial={{ scale: 1.1 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 1.5 }}
-                        src="/calculating-finances-investing-future-wealth-generated-by-ai.jpg"
-                        alt="Financial planning and wealth management"
+                        src="/businessmen-looking-through-window.jpg"
+                        alt="Professional business consultation"
                         className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-grey-900/90 via-grey-800/80 to-grey-900/90"></div>
@@ -166,20 +166,7 @@ const AboutUs = () => {
                                 So, whether you're launching a new venture, running a growing company, managing a nonprofit, or planning for your future, we're here to make the numbers work for you—and to be in your corner every step of the way. Reach out today, and let's start building the financial foundation that will keep you moving forward.
                             </motion.p>
 
-                            {/* Stats */}
-                            <motion.div 
-                                variants={containerVariants}
-                                className="grid grid-cols-2 gap-6 mt-12"
-                            >
-                                <motion.div variants={itemVariants} className="text-center">
-                                    <div className="text-3xl font-bold text-primary-400 mb-2">Big 4</div>
-                                    <div className="text-slate-400">Experience</div>
-                                </motion.div>
-                                <motion.div variants={itemVariants} className="text-center">
-                                    <div className="text-3xl font-bold text-primary-400 mb-2">Global</div>
-                                    <div className="text-slate-400">Reach</div>
-                                </motion.div>
-                            </motion.div>
+
                         </motion.div>
 
                         {/* Right Column - Image */}
@@ -188,7 +175,7 @@ const AboutUs = () => {
                                 <img
                                     src="/businessmen-looking-through-window.jpg"
                                     alt="Professional Business Team"
-                                    className="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-96 object-contain transform hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary-500/30 to-transparent"></div>
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary-400/10"></div>

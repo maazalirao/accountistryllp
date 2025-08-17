@@ -11,7 +11,7 @@ const ServicesSection = () => {
       items: [
         "General Ledger Maintenance",
         "Bank Reconciliations", 
-        "Accounts Receivable / Accounts Payable",
+        "Accounts Receivable/Accounts Payable",
         "QuickBooks and Other ERP Cleanup"
       ]
     },
@@ -149,8 +149,10 @@ const ServicesSection = () => {
                         transition={{ delay: itemIndex * 0.1 }}
                         className="flex items-start space-x-3"
                       >
-                        <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm sm:text-base text-grey-300 leading-relaxed">{item}</span>
+                        {!item.startsWith('(') && (
+                          <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
+                        )}
+                        <span className={`text-sm sm:text-base text-grey-300 leading-relaxed ${item.startsWith('(') ? 'ml-5' : ''}`}>{item}</span>
                       </motion.li>
                     ))}
                   </ul>
