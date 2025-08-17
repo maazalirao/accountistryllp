@@ -75,108 +75,108 @@ const LandingPage = () => {
             </h2>
           </div>
           
-          {/* Moving Banner */}
+          {/* Moving Banner - Improved for mobile */}
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-6 sm:space-x-8 md:space-x-12 lg:space-x-16">
+            <div className="flex animate-scroll-fast space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-6">
               {/* First set of logos */}
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/One Ocean.png" 
                   alt="One Ocean County" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Mr. Rocco's.jpg" 
                   alt="Mr. Roccos 909" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Niki's.png" 
                   alt="Nikisha Halal Grill" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Balance Health.png" 
                   alt="Balance Health" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Florida Voices.avif" 
                   alt="Healthy FLA" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/ICLR.png" 
                   alt="ICLR" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Silicon.png" 
                   alt="Silicon.net.pk" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
               
               {/* Duplicate set for seamless loop */}
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/One Ocean.png" 
                   alt="One Ocean County" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Mr. Rocco's.jpg" 
                   alt="Mr. Roccos 909" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Niki's.png" 
                   alt="Nikisha Halal Grill" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Balance Health.png" 
                   alt="Balance Health" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Florida Voices.avif" 
                   alt="Healthy FLA" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/ICLR.png" 
                   alt="ICLR" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
-              <div className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px] lg:min-w-[200px] h-16 sm:h-18 md:h-20 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-3 sm:p-4">
+              <div className="flex items-center justify-center min-w-[80px] sm:min-w-[100px] md:min-w-[120px] lg:min-w-[150px] h-12 sm:h-14 md:h-16 lg:h-18 bg-white rounded-lg backdrop-blur-sm border border-white/20 p-1 sm:p-2 md:p-3 flex-shrink-0">
                 <img 
                   src="/icons/Silicon.png" 
                   alt="Silicon.net.pk" 
-                  className="max-h-8 sm:max-h-10 md:max-h-12 max-w-full object-contain"
+                  className="max-h-4 sm:max-h-6 md:max-h-8 lg:max-h-10 max-w-full object-contain"
                 />
               </div>
             </div>

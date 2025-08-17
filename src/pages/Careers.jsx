@@ -52,7 +52,7 @@ const Careers = () => {
                         transition={{ duration: 1.5 }}
                         src="/successfully-young-businessman-keeping-arms-raised-expressing-positivity-while-standing-outdoors.jpg"
                         alt="Successful professional celebrating career growth"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-grey-900/90 via-grey-800/80 to-grey-900/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-grey-900/50 to-transparent"></div>

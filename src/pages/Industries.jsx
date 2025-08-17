@@ -111,7 +111,7 @@ const Industries = () => {
                         transition={{ duration: 1.5 }}
                         src="/lifestyle-scene-from-ordinary-mall-america.jpg"
                         alt="Modern business environment"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-grey-900/90 via-grey-800/80 to-grey-900/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-grey-900/50 to-transparent"></div>
