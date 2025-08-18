@@ -44,18 +44,18 @@ const ContactUs = () => {
             subject: formData.subject,
             message: formData.inquiry,
             time: new Date().toLocaleString(),
-            to_email: 'maazaltaf1027@gmail.com',
-            reply_to: 'maazaltaf1027@gmail.com',
+            to_email: 'info@accountistryllp.com',
+            reply_to: 'info@accountistryllp.com',
             email_subject: 'Accountistry Contact Information - New Inquiry'
         };
 
         console.log('Attempting to send email with params:', templateParams);
-        console.log('Service ID: service_i95y61l');
+        console.log('Service ID: service_ppyrnoc');
         console.log('Template ID: template_o089pra');
         console.log('Public Key: Jglgb34WZ5hr5qe1f');
         
         // Send email using EmailJS
-        emailjs.send('service_i95y61l', 'template_o089pra', templateParams)
+        emailjs.send('service_ppyrnoc', 'template_o089pra', templateParams)
             .then((response) => {
                 console.log('✅ Email sent successfully!');
                 console.log('Response status:', response.status);
