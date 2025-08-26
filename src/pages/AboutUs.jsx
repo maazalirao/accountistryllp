@@ -49,7 +49,7 @@ const AboutUs = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+                className="relative min-h-[70vh] max-h-screen flex items-center justify-center overflow-hidden"
             >
                 {/* Background with overlay */}
                 <div className="absolute inset-0">
@@ -59,7 +59,12 @@ const AboutUs = () => {
                         transition={{ duration: 1.5 }}
                         src="/businessmen-looking-through-window.jpg"
                         alt="Professional business consultation"
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover object-center"
+                        style={{
+                            objectPosition: 'center center',
+                            minHeight: '100%',
+                            minWidth: '100%'
+                        }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-grey-900/90 via-grey-800/80 to-grey-900/90"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-grey-900/50 to-transparent"></div>
@@ -170,13 +175,21 @@ const AboutUs = () => {
                         </motion.div>
 
                         {/* Right Column - Image */}
-                        <motion.div variants={imageVariants} className="relative">
-                            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                                <img
-                                    src="/businessmen-looking-through-window.jpg"
-                                    alt="Professional Business Team"
-                                    className="w-full h-72 sm:h-80 md:h-96 object-contain object-top transform hover:scale-105 transition-transform duration-700"
-                                />
+                        <motion.div variants={imageVariants} className="relative w-full">
+                            <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full">
+                                <div className="aspect-[4/3] w-full max-w-full">
+                                    <img
+                                        src="/businessmen-looking-through-window.jpg"
+                                        alt="Professional Business Team"
+                                        className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-700"
+                                        style={{
+                                            objectPosition: 'center center',
+                                            maxWidth: '100%',
+                                            maxHeight: '100%'
+                                        }}
+                                        loading="lazy"
+                                    />
+                                </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary-500/30 to-transparent"></div>
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-primary-400/10"></div>
                             </div>

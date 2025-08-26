@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import emailjs from 'emailjs-com';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import EmailTest from "../components/EmailTest";
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -141,6 +142,7 @@ const ContactUs = () => {
             </div>
 
             <Navbar />
+            <EmailTest />
 
             {/* Hero Section */}
             <motion.div 
