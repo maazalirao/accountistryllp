@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from "framer-motion";
-import emailjs from 'emailjs-com';
+import { useForm, ValidationError } from '@formspree/react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import EmailTest from "../components/EmailTest";
+// EmailTest component intentionally not imported here.
+// Rationale: The test email widget is for development only and was
+// causing accidental test sends in production. If needed during
+// local debugging, temporarily import and render it conditionally
+// based on an environment flag.
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -15,8 +19,8 @@ const ContactUs = () => {
         inquiry: '',
     });
     
-    const [messageSent, setMessageSent] = useState(false);
-    const [error, setError] = useState(false);
+    const [state, formspreeSubmit] = useForm("xqayljyp");
+    const submitAttemptedRef = useRef(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -25,92 +29,48 @@ const ContactUs = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setError(false);
-        
-        // Validate form data
+        // Simple client-side validation before sending to Formspree
         if (!formData.fullName || !formData.email || !formData.inquiry) {
             alert('Please fill in all required fields (Name, Email, and Message)');
             return;
         }
-        
-        // Initialize EmailJS with your public key
-        emailjs.init('Jglgb34WZ5hr5qe1f');
-        
-        // Create template parameters with all contact information
-        const templateParams = {
-            from_name: formData.fullName,
-            from_email: formData.email,
-            phone_number: formData.phoneNumber,
+        console.log('📨 Submitting contact form to Formspree...', {
+            fullName: formData.fullName,
+            email: formData.email,
+            phoneNumber: formData.phoneNumber,
             city: formData.city,
-            subject: formData.subject,
-            message: formData.inquiry,
-            time: new Date().toLocaleString(),
-            to_email: 'info@accountistryllp.com',
-            reply_to: 'info@accountistryllp.com',
-            email_subject: 'Accountistry Contact Information - New Inquiry'
-        };
-
-        console.log('Attempting to send email with params:', templateParams);
-        console.log('Service ID: service_ppyrnoc');
-        console.log('Template ID: template_o089pra');
-        console.log('Public Key: Jglgb34WZ5hr5qe1f');
-        
-        // Send email using EmailJS
-        emailjs.send('service_ppyrnoc', 'template_o089pra', templateParams)
-            .then((response) => {
-                console.log('✅ Email sent successfully!');
-                console.log('Response status:', response.status);
-                console.log('Response text:', response.text);
-                setMessageSent(true);
-                setFormData({
-                    fullName: '',
-                    email: '',
-                    phoneNumber: '',
-                    city: '',
-                    subject: '',
-                    inquiry: '',
-                });
-                
-                // Auto-hide success message after 5 seconds
-                setTimeout(() => {
-                    setMessageSent(false);
-                }, 5000);
-                
-            })
-            .catch((error) => {
-                console.error('❌ Failed to send email!');
-                console.error('Full error object:', error);
-                
-                // More detailed error logging
-                if (error.status) {
-                    console.error('Error status:', error.status);
-                }
-                if (error.text) {
-                    console.error('Error text:', error.text);
-                }
-                if (error.message) {
-                    console.error('Error message:', error.message);
-                }
-                
-                // Common error explanations
-                if (error.status === 400) {
-                    console.error('❌ Bad Request - Check your template ID and parameters');
-                } else if (error.status === 401) {
-                    console.error('❌ Unauthorized - Check your public key');
-                } else if (error.status === 404) {
-                    console.error('❌ Not Found - Check your service ID or template ID');
-                } else if (error.status === 422) {
-                    console.error('❌ Invalid template parameters - Check your template variables');
-                }
-                
-                setError(true);
-                
-                // Auto-hide error message after 5 seconds
-                setTimeout(() => {
-                    setError(false);
-                }, 5000);
-            });
+            subject: formData.subject
+        });
+        submitAttemptedRef.current = true;
+        formspreeSubmit(e);
     };
+
+    // Reset the form once Formspree reports success
+    useEffect(() => {
+        if (state.succeeded) {
+            console.log('✅ Formspree: submission succeeded.');
+            setFormData({
+                fullName: '',
+                email: '',
+                phoneNumber: '',
+                city: '',
+                subject: '',
+                inquiry: '',
+            });
+        }
+    }, [state.succeeded]);
+
+    // Log failure details after a submission attempt completes
+    useEffect(() => {
+        if (!submitAttemptedRef.current) return;
+        if (state.submitting) return;
+        if (state.succeeded) return;
+        if (state.errors && state.errors.length > 0) {
+            console.error('❌ Formspree: submission failed with validation/errors:', state.errors);
+            // Throwing an error to surface failure clearly in console/runtime
+            throw new Error('Form submission failed. See console for Formspree errors.');
+        }
+    }, [state.submitting, state.succeeded, state.errors]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -142,7 +102,7 @@ const ContactUs = () => {
             </div>
 
             <Navbar />
-            <EmailTest />
+            {/* EmailTest removed from production UI. Use only in development. */}
 
             {/* Hero Section */}
             <motion.div 
@@ -317,6 +277,7 @@ const ContactUs = () => {
                                                 placeholder="your@email.com"
                                                 required
                                             />
+                                            <ValidationError prefix="Email" field="email" errors={state.errors} />
                                         </div>
                                     </div>
 
@@ -383,20 +344,24 @@ const ContactUs = () => {
                                             placeholder="Tell us about your project or inquiry..."
                                             required
                                         />
+                                        {/* Ensure Formspree receives a `message` field mapped from inquiry */}
+                                        <input type="hidden" name="message" value={formData.inquiry} />
+                                        <ValidationError prefix="Message" field="message" errors={state.errors} />
                                     </div>
 
                                     <motion.button
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                         type="submit"
-                                        className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold py-4 px-6 rounded-lg hover:from-primary-600 hover:to-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300 transition-all duration-300 shadow-lg hover:shadow-xl"
+                                        disabled={state.submitting}
+                                        className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold py-4 px-6 rounded-lg hover:from-primary-600 hover:to-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
                                     >
                                         Send Message
                                     </motion.button>
                                 </form>
 
                                 {/* Success/Error Messages */}
-                                {messageSent && (
+                                {state.succeeded && (
                                     <motion.div 
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
@@ -410,8 +375,7 @@ const ContactUs = () => {
                                         </div>
                                     </motion.div>
                                 )}
-                                
-                                {error && (
+                                {state.errors && state.errors.length > 0 && (
                                     <motion.div 
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
