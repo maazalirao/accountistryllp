@@ -9,11 +9,21 @@ import Industries from './pages/Industries';
 import Careers from './pages/Careers';
 import ContactUs from './pages/ContactUs';
 import FAQ from './pages/FAQ';
+import MaintenancePage from './pages/MaintenancePage';
+
+// MAINTENANCE MODE TOGGLE
+// Set this to true to enable maintenance mode, false to disable
+const MAINTENANCE_MODE = true;
 
 function App() {
   useEffect(() => {
     document.title = "Accountistry - Professional Accounting Services";
   }, []);
+
+  // If maintenance mode is enabled, show only the maintenance page
+  if (MAINTENANCE_MODE) {
+    return <MaintenancePage />;
+  }
 
   return (
     <BrowserRouter>
