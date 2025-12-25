@@ -13,7 +13,7 @@ import MaintenancePage from './pages/MaintenancePage';
 
 // MAINTENANCE MODE TOGGLE
 // Set this to true to enable maintenance mode, false to disable
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 
 function App() {
   useEffect(() => {

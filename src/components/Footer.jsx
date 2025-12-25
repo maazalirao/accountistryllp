@@ -134,10 +134,11 @@ const Footer = () => {
                 </a>
               </div>
               
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-primary-400 flex-shrink-0" />
+              <div className="flex items-start space-x-2">
+                <MapPin className="w-4 h-4 text-primary-400 flex-shrink-0 mt-1" />
                 <span className="text-grey-300">
-                  Southern California
+                  4160 Temescal Canyon Road, Suite 401-162<br />
+                  Corona, CA 92883
                 </span>
               </div>
               
